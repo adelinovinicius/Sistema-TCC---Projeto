@@ -1,0 +1,283 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package br.fatec.aula.view;
+
+import com.sun.crypto.provider.DESCipher;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
+/**
+ *
+ * @author ad0201
+ */
+public class PrincipalFrame extends javax.swing.JFrame {
+
+    /**
+     * Creates new form ComprasFrame
+     */
+    public PrincipalFrame() {
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    
+    private CadastroClienteInternalFrame telaCliente = null;
+    private CadastroLojaInternalFrame telacadastroloja = null; 
+    private CadastroDeProdutosInternalFrame telacadastroProduto = null;
+    private comprasInternalFrame telaEvento = null;
+    private FornecedorJInternalFrame telaFornecedor = null;
+    
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jMenuItem1 = new javax.swing.JMenuItem();
+        principalPanel = new javax.swing.JPanel();
+        funçoesMenuBar = new javax.swing.JMenuBar();
+        clienteMenu = new javax.swing.JMenu();
+        cadastroclienteMenuItem = new javax.swing.JMenuItem();
+        consultarClienteMenuItem = new javax.swing.JMenuItem();
+        LojaMenu = new javax.swing.JMenu();
+        cadastroLojaMenuItem = new javax.swing.JMenuItem();
+        consultarLojaMenuItem = new javax.swing.JMenuItem();
+        produtoMenu = new javax.swing.JMenu();
+        cadastroProdutoMenuItem = new javax.swing.JMenuItem();
+        consultarProdutoMenuItem = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        cadastroFornecedorMenuItem = new javax.swing.JMenuItem();
+        comprasMenu = new javax.swing.JMenu();
+        cadastrocomprasMenuItem = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema de Compras");
+
+        javax.swing.GroupLayout principalPanelLayout = new javax.swing.GroupLayout(principalPanel);
+        principalPanel.setLayout(principalPanelLayout);
+        principalPanelLayout.setHorizontalGroup(
+            principalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 602, Short.MAX_VALUE)
+        );
+        principalPanelLayout.setVerticalGroup(
+            principalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 363, Short.MAX_VALUE)
+        );
+
+        funçoesMenuBar.setBorder(null);
+
+        clienteMenu.setText("Clientes");
+
+        cadastroclienteMenuItem.setText("Cadastro Cliente");
+        cadastroclienteMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastroclienteMenuItemActionPerformed(evt);
+            }
+        });
+        clienteMenu.add(cadastroclienteMenuItem);
+
+        consultarClienteMenuItem.setText("Consultar Cliente");
+        consultarClienteMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultarClienteMenuItemActionPerformed(evt);
+            }
+        });
+        clienteMenu.add(consultarClienteMenuItem);
+
+        funçoesMenuBar.add(clienteMenu);
+
+        LojaMenu.setText("Loja");
+
+        cadastroLojaMenuItem.setText("Cadastrar Loja");
+        cadastroLojaMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastroLojaMenuItemActionPerformed(evt);
+            }
+        });
+        LojaMenu.add(cadastroLojaMenuItem);
+
+        consultarLojaMenuItem.setText("Consultar Loja");
+        consultarLojaMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultarLojaMenuItemActionPerformed(evt);
+            }
+        });
+        LojaMenu.add(consultarLojaMenuItem);
+
+        funçoesMenuBar.add(LojaMenu);
+
+        produtoMenu.setText("Produto");
+
+        cadastroProdutoMenuItem.setText("Cadastro Produto");
+        cadastroProdutoMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastroProdutoMenuItemActionPerformed(evt);
+            }
+        });
+        produtoMenu.add(cadastroProdutoMenuItem);
+
+        consultarProdutoMenuItem.setText("Consultar Produto");
+        consultarProdutoMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultarProdutoMenuItemActionPerformed(evt);
+            }
+        });
+        produtoMenu.add(consultarProdutoMenuItem);
+
+        funçoesMenuBar.add(produtoMenu);
+
+        jMenu1.setText("Fonecedor");
+
+        cadastroFornecedorMenuItem.setText("Cadastro Fornecedor");
+        cadastroFornecedorMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastroFornecedorMenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(cadastroFornecedorMenuItem);
+
+        funçoesMenuBar.add(jMenu1);
+
+        comprasMenu.setText("Compras");
+
+        cadastrocomprasMenuItem.setText("Cadastro Compra");
+        cadastrocomprasMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrocomprasMenuItemActionPerformed(evt);
+            }
+        });
+        comprasMenu.add(cadastrocomprasMenuItem);
+
+        funçoesMenuBar.add(comprasMenu);
+
+        setJMenuBar(funçoesMenuBar);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(principalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(principalPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void cadastrocomprasMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrocomprasMenuItemActionPerformed
+        if(telaEvento != null && telaEvento.isVisible()) {
+            return;
+        }
+        telaEvento = new comprasInternalFrame();
+        telaEvento.setVisible(true);
+        principalPanel.add(telaEvento);
+    }//GEN-LAST:event_cadastrocomprasMenuItemActionPerformed
+
+    private void cadastroclienteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroclienteMenuItemActionPerformed
+        if(telaCliente!= null && telaCliente.isVisible()) {
+        return;
+        }
+        telaCliente = new CadastroClienteInternalFrame();
+        telaCliente.setVisible(true);
+        principalPanel.add(telaCliente);
+    }//GEN-LAST:event_cadastroclienteMenuItemActionPerformed
+
+    private void consultarClienteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarClienteMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_consultarClienteMenuItemActionPerformed
+
+    private void cadastroLojaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroLojaMenuItemActionPerformed
+        if(telacadastroloja!= null && telacadastroloja.isVisible()) {
+        return;
+        }
+        telacadastroloja = new CadastroLojaInternalFrame();
+        telacadastroloja.setVisible(true);
+        principalPanel.add(telacadastroloja);
+    }//GEN-LAST:event_cadastroLojaMenuItemActionPerformed
+
+    private void consultarLojaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarLojaMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_consultarLojaMenuItemActionPerformed
+
+    private void cadastroProdutoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroProdutoMenuItemActionPerformed
+        if(telacadastroProduto!= null && telacadastroProduto.isVisible()) {
+        return;
+        }
+        telacadastroProduto = new CadastroDeProdutosInternalFrame();
+        telacadastroProduto.setVisible(true);
+        principalPanel.add(telacadastroProduto);
+    }//GEN-LAST:event_cadastroProdutoMenuItemActionPerformed
+
+    private void consultarProdutoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarProdutoMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_consultarProdutoMenuItemActionPerformed
+
+    private void cadastroFornecedorMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroFornecedorMenuItemActionPerformed
+        if(telaFornecedor!= null && telaFornecedor.isVisible()) {
+        return;
+        }
+        telaFornecedor = new FornecedorJInternalFrame();
+        telaFornecedor.setVisible(true);
+        principalPanel.add(telaFornecedor);
+    }//GEN-LAST:event_cadastroFornecedorMenuItemActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(PrincipalFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(PrincipalFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(PrincipalFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(PrincipalFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new PrincipalFrame().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu LojaMenu;
+    private javax.swing.JMenuItem cadastroFornecedorMenuItem;
+    private javax.swing.JMenuItem cadastroLojaMenuItem;
+    private javax.swing.JMenuItem cadastroProdutoMenuItem;
+    private javax.swing.JMenuItem cadastroclienteMenuItem;
+    private javax.swing.JMenuItem cadastrocomprasMenuItem;
+    private javax.swing.JMenu clienteMenu;
+    private javax.swing.JMenu comprasMenu;
+    private javax.swing.JMenuItem consultarClienteMenuItem;
+    private javax.swing.JMenuItem consultarLojaMenuItem;
+    private javax.swing.JMenuItem consultarProdutoMenuItem;
+    private javax.swing.JMenuBar funçoesMenuBar;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPanel principalPanel;
+    private javax.swing.JMenu produtoMenu;
+    // End of variables declaration//GEN-END:variables
+}
