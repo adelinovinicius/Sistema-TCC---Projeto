@@ -6,9 +6,8 @@ public class Cliente {
     private int id;
     private String nome;
     private String email;
-    private String senha;
-    private int CPF;
-    private int telefone;
+    private String CPF;
+    private String telefone;
     private String sexo;
     private String rua;
     private int numero;
@@ -41,27 +40,19 @@ public class Cliente {
         this.email = email;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public int getCPF() {
+    public String getCPF() {
         return CPF;
     }
 
-    public void setCPF(int CPF) {
+    public void setCPF(String CPF) {
         this.CPF = CPF;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 

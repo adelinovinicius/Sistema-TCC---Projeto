@@ -20,9 +20,7 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
         nomeProdutoTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        codigoLojaProprietariaFormattedTextField = new javax.swing.JFormattedTextField();
         jLabel9 = new javax.swing.JLabel();
-        codigoFornecedorFormattedTextField = new javax.swing.JFormattedTextField();
         produtosScrollPane2 = new javax.swing.JScrollPane();
         produtosTable2 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
@@ -32,6 +30,8 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
         limparProdutoButton = new javax.swing.JButton();
         valorProdutoTextField = new javax.swing.JTextField();
         txtQtd = new javax.swing.JTextField();
+        codigoLojaProprietariaTextField = new javax.swing.JTextField();
+        codigoFornecedorTextField = new javax.swing.JTextField();
 
         setClosable(true);
         setTitle("Cadastro de Produtos");
@@ -42,11 +42,7 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
 
         jLabel5.setText("Codigo da Loja Proprietaria");
 
-        codigoLojaProprietariaFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-
         jLabel9.setText("Codigo da Fornec. Proprietaria");
-
-        codigoFornecedorFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
         produtosTable2.setBackground(new java.awt.Color(44, 62, 80));
         produtosTable2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -89,6 +85,11 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
         excluirProdutoButton.setText("Excluir");
 
         limparProdutoButton.setText("Limpar");
+        limparProdutoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limparProdutoButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -105,13 +106,13 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(nomeProdutoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel9))
+                                .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(codigoLojaProprietariaFormattedTextField)
-                                    .addComponent(codigoFornecedorFormattedTextField))))
+                                .addComponent(codigoLojaProprietariaTextField))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(codigoFornecedorTextField)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -145,16 +146,16 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(codigoLojaProprietariaFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(limparProdutoButton)
                     .addComponent(cadastrarProdutosButton)
-                    .addComponent(valorProdutoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(valorProdutoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(codigoLojaProprietariaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(codigoFornecedorFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(excluirProdutoButton))
+                    .addComponent(excluirProdutoButton)
+                    .addComponent(codigoFornecedorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(produtosScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(19, Short.MAX_VALUE))
@@ -203,19 +204,33 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
         p.setNome(nomeProdutoTextField.getText());
         p.setQtd((Integer.parseInt(txtQtd.getText())));
         p.setValor(Double.parseDouble(valorProdutoTextField.getText()));
-        p.setCodfornecedorproprietario((Integer.parseInt(codigoFornecedorFormattedTextField.getText())));
-        p.setCodlojaproprietaria((Integer.parseInt(codigoLojaProprietariaFormattedTextField.getText())));
+        //p.setCodfornecedorproprietario((Integer.parseInt(codigoFornecedorTextField.getText())));
+       // p.setCodlojaproprietaria((Integer.parseInt(codigoLojaProprietariaTextField.getText())));
         
         dao.create(p);
 
     }//GEN-LAST:event_cadastrarProdutosButtonActionPerformed
 
+    private void limparProdutoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparProdutoButtonActionPerformed
+       /* nomeClienteTextField.setText("");
+        cpfClienteFormattedTextField.setText("");
+        sexoComboBox.setSelectedIndex(0);
+        ruaClienteTextField.setText("");
+        bairroClienteTextField.setText("");
+        cidadeClienteTextField.setText("");
+        cepClienteFormattedTextField.setText("");
+        estadoClienteComboBox.setSelectedIndex(0);
+        telefoneClienteFormattedTextField.setText("");
+        tipoTelefoneComboBox.setSelectedIndex(0);
+        emailClienteTextField.setText("");*/
+    }//GEN-LAST:event_limparProdutoButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atualizarProdutoButton;
     private javax.swing.JButton cadastrarProdutosButton;
-    private javax.swing.JFormattedTextField codigoFornecedorFormattedTextField;
-    private javax.swing.JFormattedTextField codigoLojaProprietariaFormattedTextField;
+    private javax.swing.JTextField codigoFornecedorTextField;
+    private javax.swing.JTextField codigoLojaProprietariaTextField;
     private javax.swing.JButton excluirProdutoButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

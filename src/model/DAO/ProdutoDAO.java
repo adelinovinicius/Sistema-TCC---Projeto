@@ -21,6 +21,8 @@ public class ProdutoDAO {
             stmt.setString(1, p.getNome());
             stmt.setInt(2, p.getQtd());
             stmt.setDouble(3, p.getValor());
+            //stmt.setInt(4, p.getCodlojaproprietaria());
+            //stmt.setInt(5, p.getCodfornecedorproprietario());
 
             stmt.executeUpdate();
 

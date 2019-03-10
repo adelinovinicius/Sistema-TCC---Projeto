@@ -53,15 +53,14 @@
                                   <Component id="nomeProdutoTextField" min="-2" pref="207" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="codigoLojaProprietariaFormattedTextField" max="32767" attributes="0"/>
-                                      <Component id="codigoFornecedorFormattedTextField" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="codigoLojaProprietariaTextField" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="codigoFornecedorTextField" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -107,17 +106,17 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="codigoLojaProprietariaFormattedTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="limparProdutoButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cadastrarProdutosButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="valorProdutoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="codigoLojaProprietariaTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="codigoFornecedorFormattedTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="excluirProdutoButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="codigoFornecedorTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="produtosScrollPane2" min="-2" pref="311" max="-2" attributes="0"/>
@@ -144,23 +143,9 @@
             <Property name="text" type="java.lang.String" value="Codigo da Loja Proprietaria"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="codigoLojaProprietariaFormattedTextField">
-          <Properties>
-            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-              <Format format="#0" subtype="-1" type="0"/>
-            </Property>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
             <Property name="text" type="java.lang.String" value="Codigo da Fornec. Proprietaria"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JFormattedTextField" name="codigoFornecedorFormattedTextField">
-          <Properties>
-            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-              <Format format="#0" subtype="-1" type="0"/>
-            </Property>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="produtosScrollPane2">
@@ -272,10 +257,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Limpar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="limparProdutoButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="valorProdutoTextField">
         </Component>
         <Component class="javax.swing.JTextField" name="txtQtd">
+        </Component>
+        <Component class="javax.swing.JTextField" name="codigoLojaProprietariaTextField">
+        </Component>
+        <Component class="javax.swing.JTextField" name="codigoFornecedorTextField">
         </Component>
       </SubComponents>
     </Container>
