@@ -89,7 +89,7 @@ public class CadastroLojaInternalFrame extends javax.swing.JInternalFrame {
         }
 
         telefoneLojaFormattedTextField.setBackground(new java.awt.Color(240, 240, 240));
-        telefoneLojaFormattedTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        telefoneLojaFormattedTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         try {
             telefoneLojaFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) 9####-####")));
         } catch (java.text.ParseException ex) {
