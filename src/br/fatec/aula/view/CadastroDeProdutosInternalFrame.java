@@ -3,6 +3,8 @@ package br.fatec.aula.view;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import model.DAO.ProdutoDAO;
+import model.bean.Produto;
 
 public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame {
 
@@ -17,7 +19,6 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
         jLabel1 = new javax.swing.JLabel();
         nomeProdutoTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        quantidadeProdutoFormattedTextField = new javax.swing.JFormattedTextField();
         jLabel5 = new javax.swing.JLabel();
         codigoLojaProprietariaFormattedTextField = new javax.swing.JFormattedTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -25,11 +26,12 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
         produtosScrollPane2 = new javax.swing.JScrollPane();
         produtosTable2 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
-        valorProdutoFormattedTextField1 = new javax.swing.JFormattedTextField();
         cadastrarProdutosButton = new javax.swing.JButton();
         atualizarProdutoButton = new javax.swing.JButton();
         excluirProdutoButton = new javax.swing.JButton();
         limparProdutoButton = new javax.swing.JButton();
+        valorProdutoTextField = new javax.swing.JTextField();
+        txtQtd = new javax.swing.JTextField();
 
         setClosable(true);
         setTitle("Cadastro de Produtos");
@@ -37,8 +39,6 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
         jLabel1.setText("Nome");
 
         jLabel2.setText("Valor");
-
-        quantidadeProdutoFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,###.##"))));
 
         jLabel5.setText("Codigo da Loja Proprietaria");
 
@@ -56,11 +56,11 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
 
             },
             new String [] {
-                "Nome Produto", "Qtde.", "V. Unit. (R$)", "Cod. Loja", "Cod. Fornecedor", "V. Total (R$)"
+                "ID", "Nome Produto", "Qtde.", "V. Unit. (R$)", "Cod. Loja", "Cod. Fornecedor", "V. Total (R$)"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Double.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Double.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -74,20 +74,15 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
             }
         });
         produtosScrollPane2.setViewportView(produtosTable2);
-        if (produtosTable2.getColumnModel().getColumnCount() > 0) {
-            produtosTable2.getColumnModel().getColumn(0).setHeaderValue("Nome Produto");
-            produtosTable2.getColumnModel().getColumn(1).setHeaderValue("Qtde.");
-            produtosTable2.getColumnModel().getColumn(2).setHeaderValue("V. Unit. (R$)");
-            produtosTable2.getColumnModel().getColumn(3).setHeaderValue("Cod. Loja");
-            produtosTable2.getColumnModel().getColumn(4).setHeaderValue("Cod. Fornecedor");
-            produtosTable2.getColumnModel().getColumn(5).setHeaderValue("V. Total (R$)");
-        }
 
         jLabel3.setText("Qtde.");
 
-        valorProdutoFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,###.##"))));
-
         cadastrarProdutosButton.setText("Cadastrar");
+        cadastrarProdutosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarProdutosButtonActionPerformed(evt);
+            }
+        });
 
         atualizarProdutoButton.setText("Atualizar");
 
@@ -102,7 +97,7 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(produtosScrollPane2)
+                    .addComponent(produtosScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -118,15 +113,13 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
                                     .addComponent(codigoLojaProprietariaFormattedTextField)
                                     .addComponent(codigoFornecedorFormattedTextField))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(quantidadeProdutoFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(valorProdutoFormattedTextField1)))
+                            .addComponent(valorProdutoTextField)
+                            .addComponent(txtQtd, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(atualizarProdutoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -146,17 +139,17 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(nomeProdutoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(quantidadeProdutoFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(atualizarProdutoButton))
+                    .addComponent(atualizarProdutoButton)
+                    .addComponent(txtQtd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(codigoLojaProprietariaFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(valorProdutoFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(limparProdutoButton)
-                    .addComponent(cadastrarProdutosButton))
+                    .addComponent(cadastrarProdutosButton)
+                    .addComponent(valorProdutoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
@@ -164,7 +157,7 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
                     .addComponent(excluirProdutoButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(produtosScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -202,6 +195,21 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
         //valorFormattedTextField.setText(String.valueOf(valorObj));
     }//GEN-LAST:event_produtosTable2MouseClicked
 
+    private void cadastrarProdutosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarProdutosButtonActionPerformed
+      
+        Produto p = new Produto();
+        ProdutoDAO dao = new ProdutoDAO();
+        
+        p.setNome(nomeProdutoTextField.getText());
+        p.setQtd((Integer.parseInt(txtQtd.getText())));
+        p.setValor(Double.parseDouble(valorProdutoTextField.getText()));
+        p.setCodfornecedorproprietario((Integer.parseInt(codigoFornecedorFormattedTextField.getText())));
+        p.setCodlojaproprietaria((Integer.parseInt(codigoLojaProprietariaFormattedTextField.getText())));
+        
+        dao.create(p);
+
+    }//GEN-LAST:event_cadastrarProdutosButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atualizarProdutoButton;
@@ -219,7 +227,8 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
     private javax.swing.JTextField nomeProdutoTextField;
     private javax.swing.JScrollPane produtosScrollPane2;
     private javax.swing.JTable produtosTable2;
-    private javax.swing.JFormattedTextField quantidadeProdutoFormattedTextField;
-    private javax.swing.JFormattedTextField valorProdutoFormattedTextField1;
+    private javax.swing.JTextField txtQtd;
+    private javax.swing.JTextField valorProdutoTextField;
     // End of variables declaration//GEN-END:variables
+
 }

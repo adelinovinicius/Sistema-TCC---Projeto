@@ -44,7 +44,7 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="produtosScrollPane2" max="32767" attributes="0"/>
+                      <Component id="produtosScrollPane2" pref="581" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -65,17 +65,14 @@
                               </Group>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="quantidadeProdutoFormattedTextField" min="-2" pref="129" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="valorProdutoFormattedTextField1" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="valorProdutoTextField" max="32767" attributes="0"/>
+                              <Component id="txtQtd" pref="129" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -103,18 +100,18 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="nomeProdutoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="quantidadeProdutoFormattedTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="atualizarProdutoButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtQtd" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="codigoLojaProprietariaFormattedTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="valorProdutoFormattedTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="limparProdutoButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cadastrarProdutosButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="valorProdutoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -124,7 +121,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="produtosScrollPane2" min="-2" pref="311" max="-2" attributes="0"/>
-                  <EmptySpace pref="15" max="32767" attributes="0"/>
+                  <EmptySpace pref="19" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -140,13 +137,6 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Valor"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JFormattedTextField" name="quantidadeProdutoFormattedTextField">
-          <Properties>
-            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-              <Format format="#,###.##" subtype="-1" type="4"/>
-            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
@@ -196,7 +186,8 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="6" rowCount="0">
+                  <Table columnCount="7" rowCount="0">
+                    <Column editable="true" title="ID" type="java.lang.Integer"/>
                     <Column editable="true" title="Nome Produto" type="java.lang.String"/>
                     <Column editable="true" title="Qtde." type="java.lang.Integer"/>
                     <Column editable="true" title="V. Unit. (R$)" type="java.lang.Double"/>
@@ -208,32 +199,37 @@
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title value="Nome Produto"/>
+                      <Title/>
                       <Editor/>
                       <Renderer/>
                     </Column>
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title value="Qtde."/>
+                      <Title/>
                       <Editor/>
                       <Renderer/>
                     </Column>
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title value="V. Unit. (R$)"/>
+                      <Title/>
                       <Editor/>
                       <Renderer/>
                     </Column>
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title value="Cod. Loja"/>
+                      <Title/>
                       <Editor/>
                       <Renderer/>
                     </Column>
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title value="Cod. Fornecedor"/>
+                      <Title/>
                       <Editor/>
                       <Renderer/>
                     </Column>
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title value="V. Total (R$)"/>
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
                       <Editor/>
                       <Renderer/>
                     </Column>
@@ -254,17 +250,13 @@
             <Property name="text" type="java.lang.String" value="Qtde."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="valorProdutoFormattedTextField1">
-          <Properties>
-            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-              <Format format="#,###.##" subtype="-1" type="4"/>
-            </Property>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JButton" name="cadastrarProdutosButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastrar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrarProdutosButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="atualizarProdutoButton">
           <Properties>
@@ -280,6 +272,10 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Limpar"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="valorProdutoTextField">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtQtd">
         </Component>
       </SubComponents>
     </Container>

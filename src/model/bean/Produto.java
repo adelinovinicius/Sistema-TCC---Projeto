@@ -58,5 +58,4 @@ public class Produto {
         this.codfornecedorproprietario = codfornecedorproprietario;
     }
     
-    
 }
