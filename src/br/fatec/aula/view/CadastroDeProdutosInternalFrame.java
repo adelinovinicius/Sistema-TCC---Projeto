@@ -212,20 +212,12 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
     }//GEN-LAST:event_cadastrarProdutosButtonActionPerformed
 
     private void limparProdutoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparProdutoButtonActionPerformed
-       /* nomeClienteTextField.setText("");
-        cpfClienteFormattedTextField.setText("");
-        sexoComboBox.setSelectedIndex(0);
-        ruaClienteTextField.setText("");
-        bairroClienteTextField.setText("");
-        cidadeClienteTextField.setText("");
-        cepClienteFormattedTextField.setText("");
-        estadoClienteComboBox.setSelectedIndex(0);
-        telefoneClienteFormattedTextField.setText("");
-        tipoTelefoneComboBox.setSelectedIndex(0);
-        emailClienteTextField.setText("");*/
+        nomeProdutoTextField.setText("");
+        txtQtd.setText("");
+        codigoLojaProprietariaTextField.setText("");
+        codigoFornecedorTextField.setText("");
+        valorProdutoTextField.setText("");
     }//GEN-LAST:event_limparProdutoButtonActionPerformed
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atualizarProdutoButton;
     private javax.swing.JButton cadastrarProdutosButton;
@@ -245,5 +237,4 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
     private javax.swing.JTextField txtQtd;
     private javax.swing.JTextField valorProdutoTextField;
     // End of variables declaration//GEN-END:variables
-
 }

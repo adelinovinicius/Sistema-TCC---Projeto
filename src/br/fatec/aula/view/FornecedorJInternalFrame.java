@@ -6,6 +6,8 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
+import model.DAO.FornecedorDAO;
+import model.bean.Fornecedor;
 
 public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
 
@@ -36,11 +38,13 @@ public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        cadastrarButton = new javax.swing.JButton();
+        excluirButton = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         produtosScrollPane = new javax.swing.JScrollPane();
         produtosTable = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        emailFornecedorTextField = new javax.swing.JTextField();
 
         setClosable(true);
         setTitle("Fornecedor");
@@ -107,11 +111,16 @@ public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
 
         jLabel2.setText("   UF");
 
-        jButton1.setText("jButton1");
+        cadastrarButton.setText("Cadastrar");
+        cadastrarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarButtonActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("jButton2");
+        excluirButton.setText("Excluir");
 
-        jButton3.setText("jButton3");
+        jButton3.setText("Consultar");
 
         produtosTable.setBackground(new java.awt.Color(44, 62, 80));
         produtosTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -121,11 +130,11 @@ public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Nome", "Telefone", "CEP", "N°", "Rua", "Bairro", "Cidade", "Estado"
+                "Nome", "Telefone", "CEP", "N°", "Rua", "Bairro", "Cidade", "Estado", "Email"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -140,10 +149,9 @@ public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
         produtosScrollPane.setViewportView(produtosTable);
         if (produtosTable.getColumnModel().getColumnCount() > 0) {
             produtosTable.getColumnModel().getColumn(1).setResizable(false);
-            produtosTable.getColumnModel().getColumn(3).setResizable(false);
-            produtosTable.getColumnModel().getColumn(5).setResizable(false);
-            produtosTable.getColumnModel().getColumn(7).setResizable(false);
         }
+
+        jLabel5.setText(" Email");
 
         javax.swing.GroupLayout FornecedorPanelLayout = new javax.swing.GroupLayout(FornecedorPanel);
         FornecedorPanel.setLayout(FornecedorPanelLayout);
@@ -160,16 +168,6 @@ public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(15, 15, 15)
                         .addComponent(RuaFornecedorTextField))
-                    .addGroup(FornecedorPanelLayout.createSequentialGroup()
-                        .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BairroFornecedorTextField)
-                            .addComponent(estadoLojaComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cidadeFornecedorTextField)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FornecedorPanelLayout.createSequentialGroup()
                         .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -190,12 +188,26 @@ public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
                             .addComponent(tipoTelefoneProdutoComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(numeroFornecedorFormattedTextField)))
                     .addGroup(FornecedorPanelLayout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(30, 30, 30)
-                        .addComponent(jButton2)
-                        .addGap(36, 36, 36)
-                        .addComponent(jButton3)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, FornecedorPanelLayout.createSequentialGroup()
+                                .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(BairroFornecedorTextField)
+                                    .addComponent(estadoLojaComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cidadeFornecedorTextField)
+                                    .addComponent(emailFornecedorTextField)))
+                            .addGroup(FornecedorPanelLayout.createSequentialGroup()
+                                .addComponent(cadastrarButton)
+                                .addGap(30, 30, 30)
+                                .addComponent(excluirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton3)))
+                        .addGap(4, 4, 4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(produtosScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -238,10 +250,14 @@ public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
                         .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(estadoLojaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
-                        .addGap(33, 33, 33)
+                        .addGap(5, 5, 5)
                         .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)
+                            .addComponent(jLabel5)
+                            .addComponent(emailFornecedorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cadastrarButton)
+                            .addComponent(excluirButton)
                             .addComponent(jButton3)))
                     .addComponent(produtosScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -308,21 +324,39 @@ public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
         //valorFormattedTextField.setText(String.valueOf(valorObj));
     }//GEN-LAST:event_produtosTableMouseClicked
 
+    private void cadastrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarButtonActionPerformed
+        Fornecedor f = new Fornecedor();
+        FornecedorDAO dao = new FornecedorDAO();
+        
+        f.setNome(nomefornecedorTextField.getText());
+        f.setTelefone(telefoneFornecedorFormattedTextField.getText());
+        f.setCEP(CEPFornecedorFormattedTextField.getText());
+        f.setNumero(numeroFornecedorFormattedTextField.getText());
+        f.setRua(RuaFornecedorTextField.getText());
+        f.setEmail(emailFornecedorTextField.getText());
+        f.setCEP(CEPFornecedorTextField.getText());
+        f.setTelefone(telefoneClienteFormattedTextField.getText());
+        
+        
+    }//GEN-LAST:event_cadastrarButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField BairroFornecedorTextField;
     private javax.swing.JFormattedTextField CEPFornecedorFormattedTextField;
     private javax.swing.JPanel FornecedorPanel;
     private javax.swing.JTextField RuaFornecedorTextField;
+    private javax.swing.JButton cadastrarButton;
     private javax.swing.JTextField cidadeFornecedorTextField;
+    private javax.swing.JTextField emailFornecedorTextField;
     private javax.swing.JComboBox<String> estadoLojaComboBox;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton excluirButton;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

@@ -5,8 +5,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;*/
+import java.util.logging.Logger;*/
+import javax.swing.JOptionPane;
 import java.text.ParseException;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
@@ -372,12 +372,13 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         estadoClienteComboBox.setSelectedIndex(0);
         telefoneClienteFormattedTextField.setText("");
         tipoTelefoneComboBox.setSelectedIndex(0);
-        
-        
+        numeroClienteTextField1.setText("");
+                
     }//GEN-LAST:event_limparButtonActionPerformed
 
     private void cadastrarClienteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarClienteButtonActionPerformed
-
+    
+        
         Cliente c = new Cliente();
         ClienteDAO dao = new ClienteDAO();
         
@@ -394,7 +395,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         //c.setUF(estadoClienteComboBox.getSelectedItem());
         
         dao.create(c);
-
+  
         /*String nome = nomeClienteTextField.getText();
         String email = emailClienteTextField.getText();
         //String senha = senhaClientePasswordField1.getText();

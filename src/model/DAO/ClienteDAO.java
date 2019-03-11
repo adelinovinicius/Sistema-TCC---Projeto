@@ -18,16 +18,17 @@ public class ClienteDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("INSERT INTO produto (NomeCliente, Email, CPFCliente, TelefoneCliente, "
-                    + "SexoCliente, RuaCliente, NumeroCliente, BairroCliente, CidadeCliente, CEPCliente, UFCliente)"
-                    + "VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+            stmt = con.prepareStatement("INSERT INTO cliente (NomeCliente, "
+                    + "Email, CPFCliente, TelefoneCliente, SexoCliente, "
+                    + "RuaCliente, NumeroCliente, BairroCliente, CidadeCliente,"
+                    + "CEPCliente, UFCliente)VALUES(?,?,?,?,?,?,?,?,?,?,?)");
             stmt.setString(1, c.getNome());
             stmt.setString(2, c.getEmail());
             stmt.setString(3, c.getCPF());
             stmt.setString(4, c.getTelefone());
             stmt.setString(5, c.getSexo());
             stmt.setString(6, c.getRua());
-            stmt.setInt(7, c.getNumero());
+            stmt.   setInt(7, c.getNumero());
             stmt.setString(8, c.getBairro());
             stmt.setString(9, c.getCidade());
             stmt.setString(10, c.getCEP());
