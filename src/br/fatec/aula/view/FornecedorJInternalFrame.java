@@ -40,7 +40,6 @@ public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         cadastrarButton = new javax.swing.JButton();
         excluirButton = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         produtosScrollPane = new javax.swing.JScrollPane();
         produtosTable = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
@@ -119,8 +118,11 @@ public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
         });
 
         excluirButton.setText("Excluir");
-
-        jButton3.setText("Consultar");
+        excluirButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluirButtonActionPerformed(evt);
+            }
+        });
 
         produtosTable.setBackground(new java.awt.Color(44, 62, 80));
         produtosTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -170,43 +172,40 @@ public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
                         .addComponent(RuaFornecedorTextField))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FornecedorPanelLayout.createSequentialGroup()
                         .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(telefoneClienteLabel, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(FornecedorPanelLayout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(CEPFornecedorFormattedTextField))
-                            .addGroup(FornecedorPanelLayout.createSequentialGroup()
+                                .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(telefoneClienteLabel, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(telefoneFornecedorFormattedTextField)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tipoTelefoneLabel)
-                            .addComponent(jLabel6))
+                                .addComponent(CEPFornecedorFormattedTextField)
+                                .addGap(1, 1, 1)
+                                .addComponent(jLabel6))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FornecedorPanelLayout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addComponent(telefoneFornecedorFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tipoTelefoneLabel)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(tipoTelefoneProdutoComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(numeroFornecedorFormattedTextField)))
                     .addGroup(FornecedorPanelLayout.createSequentialGroup()
+                        .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, FornecedorPanelLayout.createSequentialGroup()
-                                .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(BairroFornecedorTextField)
-                                    .addComponent(estadoLojaComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cidadeFornecedorTextField)
-                                    .addComponent(emailFornecedorTextField)))
                             .addGroup(FornecedorPanelLayout.createSequentialGroup()
                                 .addComponent(cadastrarButton)
-                                .addGap(30, 30, 30)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(excluirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton3)))
+                                .addGap(10, 10, 10))
+                            .addComponent(BairroFornecedorTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(estadoLojaComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cidadeFornecedorTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(emailFornecedorTextField, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(4, 4, 4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(produtosScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -224,10 +223,10 @@ public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(telefoneClienteLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tipoTelefoneLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(telefoneFornecedorFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(tipoTelefoneLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tipoTelefoneProdutoComboBox, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tipoTelefoneProdutoComboBox)
+                            .addComponent(telefoneClienteLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(CEPFornecedorFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -257,8 +256,7 @@ public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(FornecedorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cadastrarButton)
-                            .addComponent(excluirButton)
-                            .addComponent(jButton3)))
+                            .addComponent(excluirButton)))
                     .addComponent(produtosScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -325,20 +323,26 @@ public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_produtosTableMouseClicked
 
     private void cadastrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarButtonActionPerformed
+        
         Fornecedor f = new Fornecedor();
         FornecedorDAO dao = new FornecedorDAO();
         
         f.setNome(nomefornecedorTextField.getText());
+        f.setEmail(emailFornecedorTextField.getText());
         f.setTelefone(telefoneFornecedorFormattedTextField.getText());
         f.setCEP(CEPFornecedorFormattedTextField.getText());
-        f.setNumero(numeroFornecedorFormattedTextField.getText());
+        f.setNumero((Integer.parseInt(numeroFornecedorFormattedTextField.getText())));
         f.setRua(RuaFornecedorTextField.getText());
-        f.setEmail(emailFornecedorTextField.getText());
-        f.setCEP(CEPFornecedorTextField.getText());
-        f.setTelefone(telefoneClienteFormattedTextField.getText());
+        f.setBairro(BairroFornecedorTextField.getText());
+        f.setCidade(cidadeFornecedorTextField.getText());
+        //f.setUFFornecedor(estadoLojaComboBox.getText());        
         
-        
+        dao.create(f);
     }//GEN-LAST:event_cadastrarButtonActionPerformed
+
+    private void excluirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_excluirButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -351,7 +355,6 @@ public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
     private javax.swing.JTextField emailFornecedorTextField;
     private javax.swing.JComboBox<String> estadoLojaComboBox;
     private javax.swing.JButton excluirButton;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

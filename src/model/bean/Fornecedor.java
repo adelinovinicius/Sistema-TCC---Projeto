@@ -2,10 +2,10 @@
 package model.bean;
 
 public class Fornecedor {
+    
     private int id;
     private String nome;
     private String email;
-    private String CPF;
     private String telefone;
     private String CEP;
     private int numero;
@@ -36,14 +36,6 @@ public class Fornecedor {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getCPF() {
-        return CPF;
-    }
-
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
     }
 
     public String getTelefone() {
