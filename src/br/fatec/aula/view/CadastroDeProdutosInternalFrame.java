@@ -3,14 +3,40 @@ package br.fatec.aula.view;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import model.DAO.ProdutoDAO;
 import model.bean.Produto;
 
 public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame {
 
     public CadastroDeProdutosInternalFrame() {
+       
         initComponents();
+        
+        DefaultTableModel modelo = (DefaultTableModel) produtosTable2.getModel();
+        produtosTable2.setRowSorter(new TableRowSorter(modelo));
+
+        readJTable();
     }
+    
+    public void readJTable(){
+    
+        DefaultTableModel modelo = (DefaultTableModel) produtosTable2.getModel();
+        
+        ProdutoDAO pdao = new ProdutoDAO();
+        
+        for(Produto p: pdao.red()){
+            
+            modelo.addRow(new Object[]{ 
+            p.getId(),
+            p.getNome(),
+            p.getQtd(),
+            p.getValor(),
+            p.getCodlojaproprietaria(),
+            p.getCodfornecedorproprietario()             
+           });
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -52,15 +78,15 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
 
             },
             new String [] {
-                "ID", "Nome Produto", "Qtde.", "V. Unit. (R$)", "Cod. Loja", "Cod. Fornecedor", "V. Total (R$)"
+                "ID", "Nome Produto", "Qtde.", "V. Unit. (R$)", "Cod. Loja", "Cod. Fornecedor"
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Double.class
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true
             };
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         produtosTable2.getTableHeader().setReorderingAllowed(false);
@@ -179,7 +205,7 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
 
     private void produtosTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_produtosTable2MouseClicked
 
-        int linhaSelecionada = produtosTable2.getSelectedRow();
+       /* int linhaSelecionada = produtosTable2.getSelectedRow();
         if (linhaSelecionada < 0) {
             JOptionPane.showMessageDialog(this, "Selecione uma linha!");
             return;
@@ -193,7 +219,7 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
         // Colocar nos campos
         //escricaoTextField1.setText(String.valueOf(descricaoObj));
         //qtdeFormattedTextField.setText(String.valueOf(quantidadeObj));
-        //valorFormattedTextField.setText(String.valueOf(valorObj));
+        //valorFormattedTextField.setText(String.valueOf(valorObj));*/
     }//GEN-LAST:event_produtosTable2MouseClicked
 
     private void cadastrarProdutosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarProdutosButtonActionPerformed
