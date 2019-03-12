@@ -43,11 +43,11 @@ public class PrincipalFrame extends javax.swing.JFrame {
         LojaMenu = new javax.swing.JMenu();
         cadastroLojaMenuItem = new javax.swing.JMenuItem();
         consultarLojaMenuItem = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        cadastroFornecedorMenuItem = new javax.swing.JMenuItem();
         produtoMenu = new javax.swing.JMenu();
         cadastroProdutoMenuItem = new javax.swing.JMenuItem();
         consultarProdutoMenuItem = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        cadastroFornecedorMenuItem = new javax.swing.JMenuItem();
         comprasMenu = new javax.swing.JMenu();
         cadastrocomprasMenuItem = new javax.swing.JMenuItem();
 
@@ -109,6 +109,18 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
         funçoesMenuBar.add(LojaMenu);
 
+        jMenu1.setText("Fonecedor");
+
+        cadastroFornecedorMenuItem.setText("Cadastro Fornecedor");
+        cadastroFornecedorMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastroFornecedorMenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(cadastroFornecedorMenuItem);
+
+        funçoesMenuBar.add(jMenu1);
+
         produtoMenu.setText("Produto");
 
         cadastroProdutoMenuItem.setText("Cadastro Produto");
@@ -128,18 +140,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
         produtoMenu.add(consultarProdutoMenuItem);
 
         funçoesMenuBar.add(produtoMenu);
-
-        jMenu1.setText("Fonecedor");
-
-        cadastroFornecedorMenuItem.setText("Cadastro Fornecedor");
-        cadastroFornecedorMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastroFornecedorMenuItemActionPerformed(evt);
-            }
-        });
-        jMenu1.add(cadastroFornecedorMenuItem);
-
-        funçoesMenuBar.add(jMenu1);
 
         comprasMenu.setText("Compras");
 

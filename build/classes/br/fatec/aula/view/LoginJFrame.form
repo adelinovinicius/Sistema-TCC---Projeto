@@ -58,7 +58,6 @@
                           <Component id="imageLabel" min="-2" pref="320" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                           <Component id="loginPanel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -95,7 +94,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="loginButton" max="32767" attributes="0"/>
+                          <Component id="loginButton" pref="183" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="usuarioLabel" max="32767" attributes="0"/>
@@ -103,8 +102,8 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="senhaPasswordField" pref="143" max="32767" attributes="0"/>
                                   <Component id="usuarioTextField" max="32767" attributes="0"/>
+                                  <Component id="senhaTextField" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -121,13 +120,13 @@
                           <Component id="usuarioTextField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="senhaLabe2" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="senhaPasswordField" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="senhaLabe2" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="senhaTextField" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="loginButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="15" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -155,26 +154,15 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JPasswordField" name="senhaPasswordField">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="f0" green="f0" red="f0" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
-                </Property>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JButton" name="loginButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Login !"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginButtonActionPerformed"/>
-                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="hg"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="senhaTextField">
             </Component>
           </SubComponents>
         </Container>

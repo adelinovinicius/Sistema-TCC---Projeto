@@ -4,6 +4,8 @@ package br.fatec.aula.view;
 import java.text.ParseException;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
+import model.DAO.LojaDAO;
+import model.bean.Loja;
 
 public class CadastroLojaInternalFrame extends javax.swing.JInternalFrame {
 
@@ -19,7 +21,6 @@ public class CadastroLojaInternalFrame extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -35,14 +36,13 @@ public class CadastroLojaInternalFrame extends javax.swing.JInternalFrame {
         telefoneLojaFormattedTextField = new javax.swing.JFormattedTextField();
         tipoTelefoneLojaComboBox = new javax.swing.JComboBox<>();
         EmailLojaTextField1 = new javax.swing.JTextField();
-        senhaLojaPasswordField1 = new javax.swing.JPasswordField();
         estadoLojaComboBox = new javax.swing.JComboBox<>();
-        taxaDeEntregaLojaFormattedTextField = new javax.swing.JFormattedTextField();
         cepLojaFormattedTextField = new javax.swing.JFormattedTextField();
         RuaLojaTextField = new javax.swing.JTextField();
         numeroLojaFormattedTextField = new javax.swing.JFormattedTextField();
         BairroLojaTextField = new javax.swing.JTextField();
         cidadeLojaTextField = new javax.swing.JTextField();
+        taxadeEntregaTextField = new javax.swing.JTextField();
 
         jTextField1.setText("jTextField1");
 
@@ -54,8 +54,6 @@ public class CadastroLojaInternalFrame extends javax.swing.JInternalFrame {
         jLabel2.setText("CNPJ");
 
         jLabel3.setText("Fone");
-
-        jLabel5.setText("Senha");
 
         jLabel6.setText("Taxa de Entrega ");
 
@@ -117,8 +115,6 @@ public class CadastroLojaInternalFrame extends javax.swing.JInternalFrame {
             }
         });
 
-        taxaDeEntregaLojaFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
-
         cepLojaFormattedTextField.setBackground(new java.awt.Color(240, 240, 240));
         cepLojaFormattedTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         try {
@@ -156,18 +152,14 @@ public class CadastroLojaInternalFrame extends javax.swing.JInternalFrame {
                             .addComponent(CNPJLojajFormattedTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
                             .addComponent(NomeLojaTextField)))
                     .addGroup(CadastroLojaPanelLayout.createSequentialGroup()
-                        .addGroup(CadastroLojaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(CadastroLojaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(senhaLojaPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EmailLojaTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(EmailLojaTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(CadastroLojaPanelLayout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(taxaDeEntregaLojaFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(47, 47, 47)
+                        .addComponent(taxadeEntregaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(CadastroLojaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CadastroLojaPanelLayout.createSequentialGroup()
                         .addComponent(jLabel7)
@@ -176,7 +168,7 @@ public class CadastroLojaInternalFrame extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(numeroLojaFormattedTextField))
+                        .addComponent(numeroLojaFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(CadastroLojaPanelLayout.createSequentialGroup()
                         .addGroup(CadastroLojaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
@@ -188,11 +180,14 @@ public class CadastroLojaInternalFrame extends javax.swing.JInternalFrame {
                             .addComponent(BairroLojaTextField)
                             .addComponent(cidadeLojaTextField)
                             .addComponent(estadoLojaComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(RuaLojaTextField)))
-                    .addGroup(CadastroLojaPanelLayout.createSequentialGroup()
-                        .addComponent(LimparjButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                        .addComponent(GravarjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(RuaLojaTextField))))
+                .addGap(81, 81, 81))
+            .addGroup(CadastroLojaPanelLayout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(LimparjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(GravarjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         CadastroLojaPanelLayout.setVerticalGroup(
             CadastroLojaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,14 +222,12 @@ public class CadastroLojaInternalFrame extends javax.swing.JInternalFrame {
                     .addComponent(cidadeLojaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroLojaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(senhaLojaPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
-                    .addComponent(estadoLojaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(estadoLojaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(taxadeEntregaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CadastroLojaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(taxaDeEntregaLojaFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LimparjButton)
                     .addComponent(GravarjButton))
                 .addContainerGap())
@@ -246,7 +239,7 @@ public class CadastroLojaInternalFrame extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(CadastroLojaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CadastroLojaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -286,7 +279,38 @@ public class CadastroLojaInternalFrame extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_estadoLojaComboBoxActionPerformed
 
     private void GravarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GravarjButtonActionPerformed
-        // TODO add your handling code here:
+        
+        Loja l = new Loja();
+        LojaDAO dao = new LojaDAO();
+        
+        l.setNome(NomeLojaTextField.getText());
+        l.setCNPJ(CNPJLojajFormattedTextField.getText());
+        l.setTelefone(telefoneLojaFormattedTextField.getText());
+        l.setEmail(EmailLojaTextField1.getText());
+        l.setTaxaentrega(Double.parseDouble(taxadeEntregaTextField.getText()));
+        l.setCEP(cepLojaFormattedTextField.getText());
+        l.setNumero((Integer.parseInt(numeroLojaFormattedTextField.getText())));
+        l.setRua(RuaLojaTextField.getText());
+        l.setBairro(BairroLojaTextField.getText());    
+        l.setCidade(cidadeLojaTextField.getText());
+        //l.setUF(estadoLojaComboBox.getSelectedItem());
+        
+        dao.create(l);
+        
+        NomeLojaTextField.setText("");
+        CNPJLojajFormattedTextField.setText("");
+        telefoneLojaFormattedTextField.setText("");
+        tipoTelefoneLojaComboBox.setSelectedIndex(0);
+        EmailLojaTextField1.setText("");
+        taxadeEntregaTextField.setText("");
+        cepLojaFormattedTextField.setText("");
+        numeroLojaFormattedTextField.setText("");
+        RuaLojaTextField.setText("");
+        BairroLojaTextField.setText("");
+        cidadeLojaTextField.setText("");
+        cidadeLojaTextField.setText("");
+        estadoLojaComboBox.setSelectedIndex(0);
+        
     }//GEN-LAST:event_GravarjButtonActionPerformed
 
 
@@ -309,15 +333,13 @@ public class CadastroLojaInternalFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JFormattedTextField numeroLojaFormattedTextField;
-    private javax.swing.JPasswordField senhaLojaPasswordField1;
-    private javax.swing.JFormattedTextField taxaDeEntregaLojaFormattedTextField;
+    private javax.swing.JTextField taxadeEntregaTextField;
     private javax.swing.JFormattedTextField telefoneLojaFormattedTextField;
     private javax.swing.JComboBox<String> tipoTelefoneLojaComboBox;
     // End of variables declaration//GEN-END:variables

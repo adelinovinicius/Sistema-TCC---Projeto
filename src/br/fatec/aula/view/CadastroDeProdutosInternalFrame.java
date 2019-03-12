@@ -10,33 +10,9 @@ import model.bean.Produto;
 public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame {
 
     public CadastroDeProdutosInternalFrame() {
-       
         initComponents();
-        
-        DefaultTableModel modelo = (DefaultTableModel) produtosTable2.getModel();
-        produtosTable2.setRowSorter(new TableRowSorter(modelo));
 
-        readJTable();
     }
-    
-    public void readJTable(){
-    
-        DefaultTableModel modelo = (DefaultTableModel) produtosTable2.getModel();
-        
-        ProdutoDAO pdao = new ProdutoDAO();
-        
-        for(Produto p: pdao.red()){
-            
-            modelo.addRow(new Object[]{ 
-            p.getId(),
-            p.getNome(),
-            p.getQtd(),
-            p.getValor(),
-            p.getCodlojaproprietaria(),
-            p.getCodfornecedorproprietario()             
-           });
-    }
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -47,8 +23,6 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        produtosScrollPane2 = new javax.swing.JScrollPane();
-        produtosTable2 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         cadastrarProdutosButton = new javax.swing.JButton();
         atualizarProdutoButton = new javax.swing.JButton();
@@ -69,33 +43,6 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
         jLabel5.setText("Codigo da Loja Proprietaria");
 
         jLabel9.setText("Codigo da Fornec. Proprietaria");
-
-        produtosTable2.setBackground(new java.awt.Color(44, 62, 80));
-        produtosTable2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        produtosTable2.setForeground(new java.awt.Color(255, 255, 255));
-        produtosTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "Nome Produto", "Qtde.", "V. Unit. (R$)", "Cod. Loja", "Cod. Fornecedor"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        produtosTable2.getTableHeader().setReorderingAllowed(false);
-        produtosTable2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                produtosTable2MouseClicked(evt);
-            }
-        });
-        produtosScrollPane2.setViewportView(produtosTable2);
 
         jLabel3.setText("Qtde.");
 
@@ -123,41 +70,37 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nomeProdutoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(codigoLojaProprietariaTextField))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(codigoFornecedorTextField)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(produtosScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(valorProdutoTextField)
+                    .addComponent(txtQtd, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(atualizarProdutoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nomeProdutoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(codigoLojaProprietariaTextField))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(codigoFornecedorTextField)))
+                            .addComponent(excluirProdutoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                            .addComponent(limparProdutoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(valorProdutoTextField)
-                            .addComponent(txtQtd, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(atualizarProdutoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(excluirProdutoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
-                                    .addComponent(limparProdutoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cadastrarProdutosButton)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(cadastrarProdutosButton)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,9 +125,7 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
                     .addComponent(jLabel9)
                     .addComponent(excluirProdutoButton)
                     .addComponent(codigoFornecedorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(produtosScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -203,25 +144,6 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void produtosTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_produtosTable2MouseClicked
-
-       /* int linhaSelecionada = produtosTable2.getSelectedRow();
-        if (linhaSelecionada < 0) {
-            JOptionPane.showMessageDialog(this, "Selecione uma linha!");
-            return;
-        }
-
-        DefaultTableModel tabela = (DefaultTableModel) produtosTable2.getModel();
-        // Retirar da tabela
-        Object nomeObj = tabela.getValueAt(linhaSelecionada, 0);
-        Object quantidadeObj = tabela.getValueAt(linhaSelecionada, 1);
-        Object valorUnitObj = tabela.getValueAt(linhaSelecionada, 2);
-        // Colocar nos campos
-        //escricaoTextField1.setText(String.valueOf(descricaoObj));
-        //qtdeFormattedTextField.setText(String.valueOf(quantidadeObj));
-        //valorFormattedTextField.setText(String.valueOf(valorObj));*/
-    }//GEN-LAST:event_produtosTable2MouseClicked
-
     private void cadastrarProdutosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarProdutosButtonActionPerformed
       
         Produto p = new Produto();
@@ -230,10 +152,15 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
         p.setNome(nomeProdutoTextField.getText());
         p.setQtd((Integer.parseInt(txtQtd.getText())));
         p.setValor(Double.parseDouble(valorProdutoTextField.getText()));
-        //p.setCodfornecedorproprietario((Integer.parseInt(codigoFornecedorTextField.getText())));
-       // p.setCodlojaproprietaria((Integer.parseInt(codigoLojaProprietariaTextField.getText())));
-        
+        /*p.setCodfornecedorproprietario((Integer.parseInt(codigoFornecedorTextField.getText())));
+        p.setCodlojaproprietaria((Integer.parseInt(codigoLojaProprietariaTextField.getText())));*/
         dao.create(p);
+        
+        nomeProdutoTextField.setText("");
+        txtQtd.setText("");
+        codigoLojaProprietariaTextField.setText("");
+        codigoFornecedorTextField.setText("");
+        valorProdutoTextField.setText("");
 
     }//GEN-LAST:event_cadastrarProdutosButtonActionPerformed
 
@@ -258,8 +185,6 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton limparProdutoButton;
     private javax.swing.JTextField nomeProdutoTextField;
-    private javax.swing.JScrollPane produtosScrollPane2;
-    private javax.swing.JTable produtosTable2;
     private javax.swing.JTextField txtQtd;
     private javax.swing.JTextField valorProdutoTextField;
     // End of variables declaration//GEN-END:variables

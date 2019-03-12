@@ -32,7 +32,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="CadastroLojaPanel" min="-2" max="-2" attributes="0"/>
+              <Component id="CadastroLojaPanel" min="-2" pref="560" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -69,23 +69,17 @@
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jLabel5" max="32767" attributes="0"/>
-                              <Component id="jLabel13" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="senhaLojaPasswordField1" min="-2" pref="240" max="-2" attributes="0"/>
-                              <Component id="EmailLojaTextField1" min="-2" pref="240" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="EmailLojaTextField1" min="-2" pref="240" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="taxaDeEntregaLojaFormattedTextField" min="-2" pref="191" max="-2" attributes="0"/>
+                          <Component id="taxadeEntregaTextField" min="-2" pref="191" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
@@ -94,7 +88,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="numeroLojaFormattedTextField" max="32767" attributes="0"/>
+                          <Component id="numeroLojaFormattedTextField" min="-2" pref="106" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -111,12 +105,15 @@
                               <Component id="RuaLojaTextField" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="LimparjButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="20" max="32767" attributes="0"/>
-                          <Component id="GravarjButton" min="-2" pref="171" max="-2" attributes="0"/>
-                      </Group>
                   </Group>
+                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                  <Component id="LimparjButton" min="-2" pref="90" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="GravarjButton" min="-2" pref="119" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -158,15 +155,13 @@
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="senhaLojaPasswordField1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="estadoLojaComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="taxadeEntregaTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="taxaDeEntregaLojaFormattedTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="LimparjButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="GravarjButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -189,11 +184,6 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="text" type="java.lang.String" value="Fone"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Senha"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
@@ -296,8 +286,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="EmailLojaTextField1">
         </Component>
-        <Component class="javax.swing.JPasswordField" name="senhaLojaPasswordField1">
-        </Component>
         <Component class="javax.swing.JComboBox" name="estadoLojaComboBox">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -350,13 +338,6 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="taxaDeEntregaLojaFormattedTextField">
-          <Properties>
-            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-              <Format subtype="0" type="4"/>
-            </Property>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JFormattedTextField" name="cepLojaFormattedTextField">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -390,6 +371,8 @@
         <Component class="javax.swing.JTextField" name="BairroLojaTextField">
         </Component>
         <Component class="javax.swing.JTextField" name="cidadeLojaTextField">
+        </Component>
+        <Component class="javax.swing.JTextField" name="taxadeEntregaTextField">
         </Component>
       </SubComponents>
     </Container>

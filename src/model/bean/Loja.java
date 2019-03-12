@@ -1,19 +1,19 @@
 
 package model.bean;
 
-public class Cliente {
-    
+public class Loja {
+   
     private int id;
     private String nome;
-    private String email;
-    private String CPF;
+    private String CNPJ;
     private String telefone;
-    private String sexo;
-    private String rua;
+    private String email;
+    private double taxaentrega;
+    private String CEP;
     private int numero;
+    private String rua;
     private String bairro;
     private String cidade;
-    private String CEP;
     private String UF;
 
     public int getId() {
@@ -32,20 +32,12 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCNPJ() {
+        return CNPJ;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getCPF() {
-        return CPF;
-    }
-
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
+    public void setCNPJ(String CNPJ) {
+        this.CNPJ = CNPJ;
     }
 
     public String getTelefone() {
@@ -56,20 +48,28 @@ public class Cliente {
         this.telefone = telefone;
     }
 
-    public String getSexo() {
-        return sexo;
+    public String getEmail() {
+        return email;
     }
 
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getRua() {
-        return rua;
+    public double getTaxaentrega() {
+        return taxaentrega;
     }
 
-    public void setRua(String rua) {
-        this.rua = rua;
+    public void setTaxaentrega(double taxaentrega) {
+        this.taxaentrega = taxaentrega;
+    }
+
+    public String getCEP() {
+        return CEP;
+    }
+
+    public void setCEP(String CEP) {
+        this.CEP = CEP;
     }
 
     public int getNumero() {
@@ -78,6 +78,14 @@ public class Cliente {
 
     public void setNumero(int numero) {
         this.numero = numero;
+    }
+
+    public String getRua() {
+        return rua;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
     }
 
     public String getBairro() {
@@ -96,14 +104,6 @@ public class Cliente {
         this.cidade = cidade;
     }
 
-    public String getCEP() {
-        return CEP;
-    }
-
-    public void setCEP(String CEP) {
-        this.CEP = CEP;
-    }
-
     public String getUF() {
         return UF;
     }
@@ -111,9 +111,7 @@ public class Cliente {
     public void setUF(String UF) {
         this.UF = UF;
     }
-
-    public void add(Cliente cliente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
+    
     
 }

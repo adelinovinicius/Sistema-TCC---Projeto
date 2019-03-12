@@ -1,7 +1,7 @@
-
 package br.fatec.aula.view;
 
 import javax.swing.JOptionPane;
+import model.DAO.loginDAO;
 
 public class LoginJFrame extends javax.swing.JFrame {
 
@@ -10,9 +10,9 @@ public class LoginJFrame extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    
-    private comprasInternalFrame telaEvento = null; 
-    
+
+    private comprasInternalFrame telaEvento = null;
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -21,8 +21,8 @@ public class LoginJFrame extends javax.swing.JFrame {
         senhaLabe2 = new javax.swing.JLabel();
         usuarioLabel = new javax.swing.JLabel();
         usuarioTextField = new javax.swing.JTextField();
-        senhaPasswordField = new javax.swing.JPasswordField();
         loginButton = new javax.swing.JButton();
+        senhaTextField = new javax.swing.JTextField();
         imageLabel = new javax.swing.JLabel();
         tituloLabel = new javax.swing.JLabel();
 
@@ -42,18 +42,10 @@ public class LoginJFrame extends javax.swing.JFrame {
         usuarioTextField.setBackground(new java.awt.Color(240, 240, 240));
         usuarioTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        senhaPasswordField.setBackground(new java.awt.Color(240, 240, 240));
-        senhaPasswordField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
         loginButton.setText("Login !");
         loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginButtonActionPerformed(evt);
-            }
-        });
-        loginButton.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                hg(evt);
             }
         });
 
@@ -64,15 +56,15 @@ public class LoginJFrame extends javax.swing.JFrame {
             .addGroup(loginPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(loginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(loginButton, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
                     .addGroup(loginPanelLayout.createSequentialGroup()
                         .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(usuarioLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(senhaLabe2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(senhaPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
-                            .addComponent(usuarioTextField))))
+                            .addComponent(usuarioTextField)
+                            .addComponent(senhaTextField))))
                 .addContainerGap())
         );
         loginPanelLayout.setVerticalGroup(
@@ -83,12 +75,12 @@ public class LoginJFrame extends javax.swing.JFrame {
                     .addComponent(usuarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(usuarioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(8, 8, 8)
-                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(senhaLabe2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(senhaPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(senhaTextField))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(loginButton)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addGap(15, 15, 15))
         );
 
         imageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -109,8 +101,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                     .addGroup(principalJPanelLayout.createSequentialGroup()
                         .addComponent(imageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)))
+                        .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         principalJPanelLayout.setVerticalGroup(
@@ -141,31 +132,36 @@ public class LoginJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-   String usuario = usuarioTextField.getText();
-        String senha = String.valueOf(senhaPasswordField.getPassword());
-        if (usuario.equals("admin") && senha.equals("admin")){
+
+        loginDAO dao = new loginDAO();
+
+        if (dao.checkLogin(usuarioTextField.getText(), senhaTextField.getText())) {
+
+            new PrincipalFrame().setVisible(true);
+            this.dispose();
+        } else {
+                JOptionPane.showMessageDialog(null,"Usuário ou senha inválido!");
+        }
+
+        /*if (loginDAO.checkLogin(usuarioTextField.getText(), senhaTextField.getText())){
             JOptionPane.showMessageDialog(
-                    this, 
+                    this,
                     "Login realizado com sucesso!",
-                    "Login", 
+                    "Login",
                     JOptionPane.INFORMATION_MESSAGE
             );
-        PrincipalFrame tela = new PrincipalFrame();
-        tela.setVisible(true);
-        dispose();
+            PrincipalFrame tela = new PrincipalFrame();
+            tela.setVisible(true);
+            dispose();
         } else {
             JOptionPane.showMessageDialog(
-                    this, 
+                    this,
                     "Usuário ou senha inválido!",
-                    "Login", 
+                    "Login",
                     JOptionPane.ERROR_MESSAGE
             );
-        }
+        }*/
     }//GEN-LAST:event_loginButtonActionPerformed
-
-    private void hg(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_hg
-
-    }//GEN-LAST:event_hg
 
     public static void main(String args[]) {
 
@@ -182,7 +178,7 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPanel principalJPanel;
     private javax.swing.JLabel senhaLabe2;
-    private javax.swing.JPasswordField senhaPasswordField;
+    private javax.swing.JTextField senhaTextField;
     private javax.swing.JLabel tituloLabel;
     private javax.swing.JLabel usuarioLabel;
     private javax.swing.JTextField usuarioTextField;

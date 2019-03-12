@@ -6,7 +6,24 @@ public class Login {
     private int id;
     private String usuario;
     private String senha;
-    private int idCliente;
+    private int codidfornecedor;
+    private int codidloja;
+
+    public int getCodidfornecedor() {
+        return codidfornecedor;
+    }
+
+    public void setCodidfornecedor(int codidfornecedor) {
+        this.codidfornecedor = codidfornecedor;
+    }
+
+    public int getCodidloja() {
+        return codidloja;
+    }
+
+    public void setCodidloja(int codidloja) {
+        this.codidloja = codidloja;
+    }
 
     public int getId() {
         return id;
@@ -31,13 +48,5 @@ public class Login {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
-    public int getIdCliente() {
-        return idCliente;
-    }
-
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
-    }
-            
+      
 }

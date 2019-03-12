@@ -304,7 +304,7 @@ public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_RuaFornecedorTextFieldActionPerformed
 
     private void produtosTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_produtosTableMouseClicked
-
+/*
         int linhaSelecionada = produtosTable.getSelectedRow();
         if (linhaSelecionada < 0) {
             JOptionPane.showMessageDialog(this, "Selecione uma linha!");
@@ -319,7 +319,7 @@ public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
         // Colocar nos campos
         //descricaoTextField1.setText(String.valueOf(descricaoObj));
         //qtdeFormattedTextField.setText(String.valueOf(quantidadeObj));
-        //valorFormattedTextField.setText(String.valueOf(valorObj));
+        //valorFormattedTextField.setText(String.valueOf(valorObj));*/
     }//GEN-LAST:event_produtosTableMouseClicked
 
     private void cadastrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarButtonActionPerformed
