@@ -1,5 +1,6 @@
 package br.fatec.aula.view;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import model.DAO.loginDAO;
 
@@ -10,8 +11,6 @@ public class LoginJFrame extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-
-    private comprasInternalFrame telaEvento = null;
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -46,6 +45,11 @@ public class LoginJFrame extends javax.swing.JFrame {
         loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginButtonActionPerformed(evt);
+            }
+        });
+        loginButton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                loginButtonKeyPressed(evt);
             }
         });
 
@@ -136,11 +140,12 @@ public class LoginJFrame extends javax.swing.JFrame {
         loginDAO dao = new loginDAO();
 
         if (dao.checkLogin(usuarioTextField.getText(), senhaTextField.getText())) {
-
+            
             new PrincipalFrame().setVisible(true);
             this.dispose();
         } else {
-                JOptionPane.showMessageDialog(null,"Usuário ou senha inválido!");
+            JOptionPane.showMessageDialog(null, "Usuário ou senha inválido,"
+                    + "Contate ao Administrador!");
         }
 
         /*if (loginDAO.checkLogin(usuarioTextField.getText(), senhaTextField.getText())){
@@ -162,6 +167,19 @@ public class LoginJFrame extends javax.swing.JFrame {
             );
         }*/
     }//GEN-LAST:event_loginButtonActionPerformed
+
+    private void loginButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginButtonKeyPressed
+        
+        
+        loginButton.setMnemonic(KeyEvent.VK_ENTER);
+        
+        /*JOptionPane.showMessageDialog(null, "Pressionou F1!");
+	else if(evt.getKeyCode() == KeyEvent.VK_F2)
+        	JOptionPane.showMessageDialog(null, "Pressionou F2!");
+	if(evt.getKeyCode() == KeyEvent.VK_F3)
+        	JOptionPane.showMessageDialog(null, "Pressionou F3!");*/
+        
+    }//GEN-LAST:event_loginButtonKeyPressed
 
     public static void main(String args[]) {
 

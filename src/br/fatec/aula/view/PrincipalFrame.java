@@ -39,15 +39,12 @@ public class PrincipalFrame extends javax.swing.JFrame {
         funçoesMenuBar = new javax.swing.JMenuBar();
         clienteMenu = new javax.swing.JMenu();
         cadastroclienteMenuItem = new javax.swing.JMenuItem();
-        consultarClienteMenuItem = new javax.swing.JMenuItem();
         LojaMenu = new javax.swing.JMenu();
         cadastroLojaMenuItem = new javax.swing.JMenuItem();
-        consultarLojaMenuItem = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         cadastroFornecedorMenuItem = new javax.swing.JMenuItem();
         produtoMenu = new javax.swing.JMenu();
         cadastroProdutoMenuItem = new javax.swing.JMenuItem();
-        consultarProdutoMenuItem = new javax.swing.JMenuItem();
         comprasMenu = new javax.swing.JMenu();
         cadastrocomprasMenuItem = new javax.swing.JMenuItem();
 
@@ -71,7 +68,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
         clienteMenu.setText("Clientes");
 
-        cadastroclienteMenuItem.setText("Cadastro Cliente");
+        cadastroclienteMenuItem.setText("Cliente");
         cadastroclienteMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastroclienteMenuItemActionPerformed(evt);
@@ -79,19 +76,11 @@ public class PrincipalFrame extends javax.swing.JFrame {
         });
         clienteMenu.add(cadastroclienteMenuItem);
 
-        consultarClienteMenuItem.setText("Consultar Cliente");
-        consultarClienteMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultarClienteMenuItemActionPerformed(evt);
-            }
-        });
-        clienteMenu.add(consultarClienteMenuItem);
-
         funçoesMenuBar.add(clienteMenu);
 
         LojaMenu.setText("Loja");
 
-        cadastroLojaMenuItem.setText("Cadastrar Loja");
+        cadastroLojaMenuItem.setText("Loja");
         cadastroLojaMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastroLojaMenuItemActionPerformed(evt);
@@ -99,19 +88,11 @@ public class PrincipalFrame extends javax.swing.JFrame {
         });
         LojaMenu.add(cadastroLojaMenuItem);
 
-        consultarLojaMenuItem.setText("Consultar Loja");
-        consultarLojaMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultarLojaMenuItemActionPerformed(evt);
-            }
-        });
-        LojaMenu.add(consultarLojaMenuItem);
-
         funçoesMenuBar.add(LojaMenu);
 
         jMenu1.setText("Fonecedor");
 
-        cadastroFornecedorMenuItem.setText("Cadastro Fornecedor");
+        cadastroFornecedorMenuItem.setText(" Fornecedor");
         cadastroFornecedorMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastroFornecedorMenuItemActionPerformed(evt);
@@ -130,14 +111,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
             }
         });
         produtoMenu.add(cadastroProdutoMenuItem);
-
-        consultarProdutoMenuItem.setText("Consultar Produto");
-        consultarProdutoMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultarProdutoMenuItemActionPerformed(evt);
-            }
-        });
-        produtoMenu.add(consultarProdutoMenuItem);
 
         funçoesMenuBar.add(produtoMenu);
 
@@ -187,10 +160,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
         principalPanel.add(telaCliente);
     }//GEN-LAST:event_cadastroclienteMenuItemActionPerformed
 
-    private void consultarClienteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarClienteMenuItemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_consultarClienteMenuItemActionPerformed
-
     private void cadastroLojaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroLojaMenuItemActionPerformed
         if(telacadastroloja!= null && telacadastroloja.isVisible()) {
         return;
@@ -200,10 +169,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
         principalPanel.add(telacadastroloja);
     }//GEN-LAST:event_cadastroLojaMenuItemActionPerformed
 
-    private void consultarLojaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarLojaMenuItemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_consultarLojaMenuItemActionPerformed
-
     private void cadastroProdutoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroProdutoMenuItemActionPerformed
         if(telacadastroProduto!= null && telacadastroProduto.isVisible()) {
         return;
@@ -212,10 +177,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
         telacadastroProduto.setVisible(true);
         principalPanel.add(telacadastroProduto);
     }//GEN-LAST:event_cadastroProdutoMenuItemActionPerformed
-
-    private void consultarProdutoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarProdutoMenuItemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_consultarProdutoMenuItemActionPerformed
 
     private void cadastroFornecedorMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroFornecedorMenuItemActionPerformed
         if(telaFornecedor!= null && telaFornecedor.isVisible()) {
@@ -271,9 +232,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem cadastrocomprasMenuItem;
     private javax.swing.JMenu clienteMenu;
     private javax.swing.JMenu comprasMenu;
-    private javax.swing.JMenuItem consultarClienteMenuItem;
-    private javax.swing.JMenuItem consultarLojaMenuItem;
-    private javax.swing.JMenuItem consultarProdutoMenuItem;
     private javax.swing.JMenuBar funçoesMenuBar;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;

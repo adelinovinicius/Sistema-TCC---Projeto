@@ -21,18 +21,10 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="cadastroclienteMenuItem">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cadastro Cliente"/>
+                <Property name="text" type="java.lang.String" value="Cliente"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastroclienteMenuItemActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="consultarClienteMenuItem">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Consultar Cliente"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultarClienteMenuItemActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -44,18 +36,10 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="cadastroLojaMenuItem">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cadastrar Loja"/>
+                <Property name="text" type="java.lang.String" value="Loja"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastroLojaMenuItemActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="consultarLojaMenuItem">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Consultar Loja"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultarLojaMenuItemActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -67,7 +51,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="cadastroFornecedorMenuItem">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cadastro Fornecedor"/>
+                <Property name="text" type="java.lang.String" value=" Fornecedor"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastroFornecedorMenuItemActionPerformed"/>
@@ -86,14 +70,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastroProdutoMenuItemActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="consultarProdutoMenuItem">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Consultar Produto"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultarProdutoMenuItemActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
