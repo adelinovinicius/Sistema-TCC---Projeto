@@ -69,7 +69,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                     .addGroup(principalJPanelLayout.createSequentialGroup()
                         .addComponent(imageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(principalJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(principalJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(principalJPanelLayout.createSequentialGroup()
                                 .addGroup(principalJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(usuarioLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -78,8 +78,8 @@ public class LoginJFrame extends javax.swing.JFrame {
                                 .addGroup(principalJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(usuarioTextField)
                                     .addComponent(senhaTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)))
-                            .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 36, Short.MAX_VALUE)))
+                            .addComponent(loginButton, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         principalJPanelLayout.setVerticalGroup(
@@ -98,7 +98,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                             .addGroup(principalJPanelLayout.createSequentialGroup()
                                 .addComponent(senhaTextField)
                                 .addGap(5, 5, 5)))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(imageLabel))
                 .addContainerGap())
