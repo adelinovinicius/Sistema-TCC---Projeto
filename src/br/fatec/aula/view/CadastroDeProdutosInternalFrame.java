@@ -24,13 +24,13 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
 
         for (Produto p : pdao.read()) {
 
-            clientes1.addRow(new Object[]{
+            produtos1.addRow(new Object[]{
                 p.getId(),
                 p.getNome(),
                 p.getQtd(),
                 p.getValor(),
-                /*p.getCodlojaproprietaria(),
-                p.getCodfornecedorproprietario()*/
+                p.getCodlojaproprietaria(),
+                p.getCodfornecedorproprietario()
                
             });
 

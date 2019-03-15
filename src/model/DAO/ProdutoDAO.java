@@ -1,7 +1,7 @@
 
 package model.DAO;
 
-import connection.ConnectionFactory;
+import Conection.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -62,8 +62,8 @@ public class ProdutoDAO {
                 produto2.setNome(rs.getString("nomeProduto"));
                 produto2.setQtd(rs.getInt("qtdProduto"));
                 produto2.setValor(rs.getDouble("valorProduto"));
-                /*produto2.setCodlojaproprietaria(rs.getInt("idlojaproprietaria"));
-                produto2.setCodfornecedorproprietario(rs.getInt("idfornecedorproprietario"));*/
+                produto2.setCodlojaproprietaria(rs.getInt("idlojaproprietaria"));
+                produto2.setCodfornecedorproprietario(rs.getInt("idfornecedorproprietario"));
                 
                 produtos.add(produto2);
 
