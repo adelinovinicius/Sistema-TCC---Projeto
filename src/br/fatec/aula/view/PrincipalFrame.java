@@ -5,10 +5,7 @@
  */
 package br.fatec.aula.view;
 
-import com.sun.crypto.provider.DESCipher;
-import java.io.IOException;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.JFrame;
 
 /**
  *
@@ -21,16 +18,17 @@ public class PrincipalFrame extends javax.swing.JFrame {
      */
     public PrincipalFrame() {
         initComponents();
+   
     }
 
     @SuppressWarnings("unchecked")
-    
+
     private CadastroClienteInternalFrame telaCliente = null;
-    private CadastroLojaInternalFrame telacadastroloja = null; 
+    private CadastroLojaInternalFrame telacadastroloja = null;
     private CadastroDeProdutosInternalFrame telacadastroProduto = null;
     private comprasInternalFrame telaEvento = null;
     private FornecedorJInternalFrame telaFornecedor = null;
-    
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -53,8 +51,9 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Compras");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        principalPanel.setBackground(new java.awt.Color(255, 153, 51));
+        principalPanel.setBackground(new java.awt.Color(255, 145, 0));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fatec/aula/photo/app logo 6.png"))); // NOI18N
 
@@ -154,7 +153,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastrocomprasMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrocomprasMenuItemActionPerformed
-        if(telaEvento != null && telaEvento.isVisible()) {
+        if (telaEvento != null && telaEvento.isVisible()) {
             return;
         }
         telaEvento = new comprasInternalFrame();
@@ -163,8 +162,8 @@ public class PrincipalFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastrocomprasMenuItemActionPerformed
 
     private void cadastroclienteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroclienteMenuItemActionPerformed
-        if(telaCliente!= null && telaCliente.isVisible()) {
-        return;
+        if (telaCliente != null && telaCliente.isVisible()) {
+            return;
         }
         telaCliente = new CadastroClienteInternalFrame();
         telaCliente.setVisible(true);
@@ -172,8 +171,8 @@ public class PrincipalFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastroclienteMenuItemActionPerformed
 
     private void cadastroLojaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroLojaMenuItemActionPerformed
-        if(telacadastroloja!= null && telacadastroloja.isVisible()) {
-        return;
+        if (telacadastroloja != null && telacadastroloja.isVisible()) {
+            return;
         }
         telacadastroloja = new CadastroLojaInternalFrame();
         telacadastroloja.setVisible(true);
@@ -181,8 +180,8 @@ public class PrincipalFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastroLojaMenuItemActionPerformed
 
     private void cadastroProdutoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroProdutoMenuItemActionPerformed
-        if(telacadastroProduto!= null && telacadastroProduto.isVisible()) {
-        return;
+        if (telacadastroProduto != null && telacadastroProduto.isVisible()) {
+            return;
         }
         telacadastroProduto = new CadastroDeProdutosInternalFrame();
         telacadastroProduto.setVisible(true);
@@ -190,8 +189,8 @@ public class PrincipalFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastroProdutoMenuItemActionPerformed
 
     private void cadastroFornecedorMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroFornecedorMenuItemActionPerformed
-        if(telaFornecedor!= null && telaFornecedor.isVisible()) {
-        return;
+        if (telaFornecedor != null && telaFornecedor.isVisible()) {
+            return;
         }
         telaFornecedor = new FornecedorJInternalFrame();
         telaFornecedor.setVisible(true);

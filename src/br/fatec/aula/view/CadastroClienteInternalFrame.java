@@ -120,7 +120,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         setClosable(true);
         setTitle("Cliente");
 
-        dadosPessoaisPanel.setBackground(new java.awt.Color(255, 153, 51));
+        dadosPessoaisPanel.setBackground(new java.awt.Color(255, 167, 38));
         dadosPessoaisPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         dadosPessoaisPanel.setForeground(new java.awt.Color(255, 255, 255));
         dadosPessoaisPanel.setToolTipText("");
@@ -135,8 +135,12 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         sexoLabel.setForeground(new java.awt.Color(255, 255, 255));
         sexoLabel.setText("Sexo");
 
+        sexoComboBox.setBackground(new java.awt.Color(255, 167, 38));
+        sexoComboBox.setForeground(new java.awt.Color(255, 255, 255));
         sexoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Feminino", "Masculino", "Outro" }));
         sexoComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        sexoComboBox.setFocusable(false);
+        sexoComboBox.setOpaque(false);
 
         cpfClienteFormattedTextField.setBorder(null);
         try {
@@ -174,8 +178,12 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         tipoTelefoneLabel.setForeground(new java.awt.Color(255, 255, 255));
         tipoTelefoneLabel.setText("Tipo");
 
+        tipoTelefoneComboBox.setBackground(new java.awt.Color(255, 167, 38));
+        tipoTelefoneComboBox.setForeground(new java.awt.Color(255, 255, 255));
         tipoTelefoneComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Celular Pessoal", "Celular Contato", "Telefone Pessoal", "Telefone Contato" }));
         tipoTelefoneComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tipoTelefoneComboBox.setFocusable(false);
+        tipoTelefoneComboBox.setOpaque(false);
         tipoTelefoneComboBox.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
             public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
             }
@@ -186,7 +194,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
             }
         });
 
-        enderecoPanel.setBackground(new java.awt.Color(255, 153, 51));
+        enderecoPanel.setBackground(new java.awt.Color(255, 167, 38));
         enderecoPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Endereço", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         enderecoPanel.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -215,6 +223,8 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
             ex.printStackTrace();
         }
 
+        estadoClienteComboBox.setBackground(new java.awt.Color(255, 167, 38));
+        estadoClienteComboBox.setForeground(new java.awt.Color(255, 255, 255));
         estadoClienteComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
         estadoClienteComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         estadoClienteComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -290,7 +300,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        buttonPanel.setBackground(new java.awt.Color(255, 153, 51));
+        buttonPanel.setBackground(new java.awt.Color(255, 167, 38));
 
         cadastrarClienteButton.setBackground(new java.awt.Color(255, 153, 51));
         cadastrarClienteButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -344,7 +354,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
                 .addComponent(atualizarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        buscaPanel.setBackground(new java.awt.Color(255, 153, 51));
+        buscaPanel.setBackground(new java.awt.Color(255, 167, 38));
         buscaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busca", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         buscaPanel.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -456,7 +466,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
                 .addComponent(emailLabel))
         );
 
-        clienteTable.setBackground(new java.awt.Color(255, 153, 51));
+        clienteTable.setBackground(new java.awt.Color(255, 167, 38));
         clienteTable.setForeground(new java.awt.Color(255, 255, 255));
         clienteTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
