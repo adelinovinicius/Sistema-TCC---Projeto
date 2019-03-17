@@ -187,7 +187,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         });
 
         enderecoPanel.setBackground(new java.awt.Color(255, 153, 51));
-        enderecoPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Endereço"));
+        enderecoPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Endereço", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         enderecoPanel.setForeground(new java.awt.Color(255, 255, 255));
 
         ruaClienteTextField.setBorder(null);
@@ -292,7 +292,8 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
 
         buttonPanel.setBackground(new java.awt.Color(255, 153, 51));
 
-        cadastrarClienteButton.setBackground(new java.awt.Color(255, 255, 255));
+        cadastrarClienteButton.setBackground(new java.awt.Color(255, 153, 51));
+        cadastrarClienteButton.setForeground(new java.awt.Color(255, 255, 255));
         cadastrarClienteButton.setText("Cadastrar");
         cadastrarClienteButton.setBorder(null);
         cadastrarClienteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -301,7 +302,8 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
             }
         });
 
-        excluirButton.setBackground(new java.awt.Color(255, 255, 255));
+        excluirButton.setBackground(new java.awt.Color(255, 153, 51));
+        excluirButton.setForeground(new java.awt.Color(255, 255, 255));
         excluirButton.setText("Excluir");
         excluirButton.setBorder(null);
         excluirButton.addActionListener(new java.awt.event.ActionListener() {
@@ -310,7 +312,8 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
             }
         });
 
-        atualizarButton.setBackground(new java.awt.Color(255, 255, 255));
+        atualizarButton.setBackground(new java.awt.Color(255, 153, 51));
+        atualizarButton.setForeground(new java.awt.Color(255, 255, 255));
         atualizarButton.setText("Atualizar");
         atualizarButton.setBorder(null);
         atualizarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -342,12 +345,13 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         );
 
         buscaPanel.setBackground(new java.awt.Color(255, 153, 51));
-        buscaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Busca"));
+        buscaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busca", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         buscaPanel.setForeground(new java.awt.Color(255, 255, 255));
 
         buscaTextField.setBorder(null);
 
-        buscaButton.setBackground(new java.awt.Color(255, 255, 255));
+        buscaButton.setBackground(new java.awt.Color(255, 153, 51));
+        buscaButton.setForeground(new java.awt.Color(255, 255, 255));
         buscaButton.setText("Buscar");
         buscaButton.setBorder(null);
         buscaButton.addActionListener(new java.awt.event.ActionListener() {
@@ -453,6 +457,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         );
 
         clienteTable.setBackground(new java.awt.Color(255, 153, 51));
+        clienteTable.setForeground(new java.awt.Color(255, 255, 255));
         clienteTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
