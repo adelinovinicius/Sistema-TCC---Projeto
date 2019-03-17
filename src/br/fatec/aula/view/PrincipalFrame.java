@@ -36,6 +36,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         principalPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         funçoesMenuBar = new javax.swing.JMenuBar();
         clienteMenu = new javax.swing.JMenu();
         cadastroclienteMenuItem = new javax.swing.JMenuItem();
@@ -53,15 +54,25 @@ public class PrincipalFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Compras");
 
+        principalPanel.setBackground(new java.awt.Color(255, 153, 51));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fatec/aula/photo/app logo 6.png"))); // NOI18N
+
         javax.swing.GroupLayout principalPanelLayout = new javax.swing.GroupLayout(principalPanel);
         principalPanel.setLayout(principalPanelLayout);
         principalPanelLayout.setHorizontalGroup(
             principalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 602, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, principalPanelLayout.createSequentialGroup()
+                .addContainerGap(449, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addContainerGap())
         );
         principalPanelLayout.setVerticalGroup(
             principalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 363, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, principalPanelLayout.createSequentialGroup()
+                .addContainerGap(264, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         funçoesMenuBar.setBorder(null);
@@ -233,6 +244,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JMenu clienteMenu;
     private javax.swing.JMenu comprasMenu;
     private javax.swing.JMenuBar funçoesMenuBar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel principalPanel;

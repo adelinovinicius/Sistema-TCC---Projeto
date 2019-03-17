@@ -120,33 +120,38 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         setClosable(true);
         setTitle("Cliente");
 
+        dadosPessoaisPanel.setBackground(new java.awt.Color(255, 153, 51));
         dadosPessoaisPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         dadosPessoaisPanel.setForeground(new java.awt.Color(255, 255, 255));
         dadosPessoaisPanel.setToolTipText("");
 
+        nomeLabel.setForeground(new java.awt.Color(255, 255, 255));
         nomeLabel.setText("E - Mail");
 
+        cpfLabel.setForeground(new java.awt.Color(255, 255, 255));
         cpfLabel.setText("CPF");
         cpfLabel.setToolTipText("");
 
+        sexoLabel.setForeground(new java.awt.Color(255, 255, 255));
         sexoLabel.setText("Sexo");
 
         sexoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Feminino", "Masculino", "Outro" }));
-        sexoComboBox.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        sexoComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        cpfClienteFormattedTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        cpfClienteFormattedTextField.setBorder(null);
         try {
             cpfClienteFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
-        emailClienteTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        emailClienteTextField.setBorder(null);
 
+        cpfLabel1.setForeground(new java.awt.Color(255, 255, 255));
         cpfLabel1.setText("Nome ");
         cpfLabel1.setToolTipText("");
 
-        nomeClienteTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        nomeClienteTextField.setBorder(null);
         nomeClienteTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nomeClienteTextFieldActionPerformed(evt);
@@ -155,9 +160,10 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
 
         emailLabel.setForeground(new java.awt.Color(255, 255, 255));
 
+        telefoneClienteLabel.setForeground(new java.awt.Color(255, 255, 255));
         telefoneClienteLabel.setText("Telefone");
 
-        telefoneClienteFormattedTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        telefoneClienteFormattedTextField.setBorder(null);
         try {
             telefoneClienteFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) 9####-####")));
         } catch (java.text.ParseException ex) {
@@ -165,10 +171,11 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         }
         telefoneClienteFormattedTextField.setSelectedTextColor(new java.awt.Color(0, 0, 0));
 
+        tipoTelefoneLabel.setForeground(new java.awt.Color(255, 255, 255));
         tipoTelefoneLabel.setText("Tipo");
 
         tipoTelefoneComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Celular Pessoal", "Celular Contato", "Telefone Pessoal", "Telefone Contato" }));
-        tipoTelefoneComboBox.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tipoTelefoneComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tipoTelefoneComboBox.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
             public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
             }
@@ -179,24 +186,29 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
             }
         });
 
+        enderecoPanel.setBackground(new java.awt.Color(255, 153, 51));
         enderecoPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Endereço"));
+        enderecoPanel.setForeground(new java.awt.Color(255, 255, 255));
 
-        ruaClienteTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ruaClienteTextField.setBorder(null);
 
+        ruaLabel.setForeground(new java.awt.Color(255, 255, 255));
         ruaLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         ruaLabel.setText("Rua");
 
+        bairroLabel.setForeground(new java.awt.Color(255, 255, 255));
         bairroLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         bairroLabel.setText("Bairro");
 
+        cidadeLabel.setForeground(new java.awt.Color(255, 255, 255));
         cidadeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         cidadeLabel.setText("Cidade");
 
-        cidadeClienteTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        cidadeClienteTextField.setBorder(null);
 
-        bairroClienteTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        bairroClienteTextField.setBorder(null);
 
-        cepClienteFormattedTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        cepClienteFormattedTextField.setBorder(null);
         try {
             cepClienteFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
         } catch (java.text.ParseException ex) {
@@ -204,23 +216,26 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         }
 
         estadoClienteComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
-        estadoClienteComboBox.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        estadoClienteComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         estadoClienteComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 estadoClienteComboBoxActionPerformed(evt);
             }
         });
 
+        ufLabel.setForeground(new java.awt.Color(255, 255, 255));
         ufLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         ufLabel.setText("UF");
 
+        cepLabel.setForeground(new java.awt.Color(255, 255, 255));
         cepLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         cepLabel.setText("CEP");
 
+        numeroLabel1.setForeground(new java.awt.Color(255, 255, 255));
         numeroLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         numeroLabel1.setText("N°");
 
-        numeroClienteTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        numeroClienteTextField1.setBorder(null);
 
         javax.swing.GroupLayout enderecoPanelLayout = new javax.swing.GroupLayout(enderecoPanel);
         enderecoPanel.setLayout(enderecoPanelLayout);
@@ -275,21 +290,29 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        buttonPanel.setBackground(new java.awt.Color(255, 153, 51));
+
+        cadastrarClienteButton.setBackground(new java.awt.Color(255, 255, 255));
         cadastrarClienteButton.setText("Cadastrar");
+        cadastrarClienteButton.setBorder(null);
         cadastrarClienteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastrarClienteButtonActionPerformed(evt);
             }
         });
 
+        excluirButton.setBackground(new java.awt.Color(255, 255, 255));
         excluirButton.setText("Excluir");
+        excluirButton.setBorder(null);
         excluirButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 excluirButtonActionPerformed(evt);
             }
         });
 
+        atualizarButton.setBackground(new java.awt.Color(255, 255, 255));
         atualizarButton.setText("Atualizar");
+        atualizarButton.setBorder(null);
         atualizarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 atualizarButtonActionPerformed(evt);
@@ -310,17 +333,23 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         buttonPanelLayout.setVerticalGroup(
             buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(buttonPanelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
                 .addComponent(cadastrarClienteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(excluirButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(atualizarButton)
-                .addGap(0, 5, Short.MAX_VALUE))
+                .addComponent(excluirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(atualizarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        buscaPanel.setBackground(new java.awt.Color(255, 153, 51));
         buscaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Busca"));
+        buscaPanel.setForeground(new java.awt.Color(255, 255, 255));
 
+        buscaTextField.setBorder(null);
+
+        buscaButton.setBackground(new java.awt.Color(255, 255, 255));
         buscaButton.setText("Buscar");
+        buscaButton.setBorder(null);
         buscaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buscaButtonActionPerformed(evt);
@@ -334,14 +363,14 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
             .addComponent(buscaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(buscaPanelLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addComponent(buscaButton))
+                .addComponent(buscaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         buscaPanelLayout.setVerticalGroup(
             buscaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(buscaPanelLayout.createSequentialGroup()
                 .addComponent(buscaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(buscaButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(buscaButton, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout dadosPessoaisPanelLayout = new javax.swing.GroupLayout(dadosPessoaisPanel);
@@ -423,6 +452,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
                 .addComponent(emailLabel))
         );
 
+        clienteTable.setBackground(new java.awt.Color(255, 153, 51));
         clienteTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -459,9 +489,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 24, Short.MAX_VALUE))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -469,12 +497,12 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(dadosPessoaisPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(dadosPessoaisPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(dadosPessoaisPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dadosPessoaisPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -714,4 +742,6 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel tipoTelefoneLabel;
     private javax.swing.JLabel ufLabel;
     // End of variables declaration//GEN-END:variables
+
+
 }
