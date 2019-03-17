@@ -1,21 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package br.fatec.aula.view;
 
-import javax.swing.JFrame;
-
-/**
- *
- * @author ad0201
- */
 public class PrincipalFrame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ComprasFrame
-     */
     public PrincipalFrame() {
         initComponents();
    
@@ -52,9 +39,11 @@ public class PrincipalFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Compras");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setResizable(false);
 
         principalPanel.setBackground(new java.awt.Color(255, 145, 0));
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fatec/aula/photo/app logo 6.png"))); // NOI18N
 
         javax.swing.GroupLayout principalPanelLayout = new javax.swing.GroupLayout(principalPanel);
@@ -74,6 +63,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        funçoesMenuBar.setBackground(new java.awt.Color(255, 255, 255));
         funçoesMenuBar.setBorder(null);
 
         clienteMenu.setText("Clientes");

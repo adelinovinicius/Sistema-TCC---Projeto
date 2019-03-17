@@ -135,8 +135,6 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         sexoLabel.setForeground(new java.awt.Color(255, 255, 255));
         sexoLabel.setText("Sexo");
 
-        sexoComboBox.setBackground(new java.awt.Color(255, 167, 38));
-        sexoComboBox.setForeground(new java.awt.Color(255, 255, 255));
         sexoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Feminino", "Masculino", "Outro" }));
         sexoComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         sexoComboBox.setFocusable(false);
@@ -178,8 +176,6 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         tipoTelefoneLabel.setForeground(new java.awt.Color(255, 255, 255));
         tipoTelefoneLabel.setText("Tipo");
 
-        tipoTelefoneComboBox.setBackground(new java.awt.Color(255, 167, 38));
-        tipoTelefoneComboBox.setForeground(new java.awt.Color(255, 255, 255));
         tipoTelefoneComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Celular Pessoal", "Celular Contato", "Telefone Pessoal", "Telefone Contato" }));
         tipoTelefoneComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tipoTelefoneComboBox.setFocusable(false);
@@ -223,8 +219,6 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
             ex.printStackTrace();
         }
 
-        estadoClienteComboBox.setBackground(new java.awt.Color(255, 167, 38));
-        estadoClienteComboBox.setForeground(new java.awt.Color(255, 255, 255));
         estadoClienteComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
         estadoClienteComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         estadoClienteComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -359,6 +353,11 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         buscaPanel.setForeground(new java.awt.Color(255, 255, 255));
 
         buscaTextField.setBorder(null);
+        buscaTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscaTextFieldActionPerformed(evt);
+            }
+        });
 
         buscaButton.setBackground(new java.awt.Color(255, 153, 51));
         buscaButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -713,10 +712,14 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         } else {
 
             burcarpornome(buscaTextField.getText());
-        }
-        
-        
+    }
+
+
     }//GEN-LAST:event_buscaButtonActionPerformed
+
+    private void buscaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscaTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buscaTextFieldActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atualizarButton;
