@@ -14,7 +14,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private CadastroLojaInternalFrame telacadastroloja = null;
     private CadastroDeProdutosInternalFrame telacadastroProduto = null;
     private comprasInternalFrame telaEvento = null;
-    private FornecedorJInternalFrame telaFornecedor = null;
+    private EntregadorInternalFrame telaFornecedor = null;
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -182,7 +182,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
         if (telaFornecedor != null && telaFornecedor.isVisible()) {
             return;
         }
-        telaFornecedor = new FornecedorJInternalFrame();
+        telaFornecedor = new EntregadorInternalFrame();
         telaFornecedor.setVisible(true);
         principalPanel.add(telaFornecedor);
     }//GEN-LAST:event_cadastroFornecedorMenuItemActionPerformed

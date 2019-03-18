@@ -9,9 +9,9 @@ import javax.swing.text.MaskFormatter;
 import model.DAO.FornecedorDAO;
 import model.bean.Fornecedor;
 
-public class FornecedorJInternalFrame extends javax.swing.JInternalFrame {
+public class EntregadorInternalFrame extends javax.swing.JInternalFrame {
 
-    public FornecedorJInternalFrame() {
+    public EntregadorInternalFrame() {
         initComponents();
     }
 
