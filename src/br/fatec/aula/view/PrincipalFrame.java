@@ -15,6 +15,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private CadastroDeProdutosInternalFrame telacadastroProduto = null;
     private comprasInternalFrame telaEvento = null;
     private EntregadorInternalFrame telaFornecedor = null;
+    private BuscaClienteInternalFrame telaBuscaCliente = null;
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -25,6 +26,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
         funçoesMenuBar = new javax.swing.JMenuBar();
         clienteMenu = new javax.swing.JMenu();
         cadastroclienteMenuItem = new javax.swing.JMenuItem();
+        cadastroclienteMenuItem1 = new javax.swing.JMenuItem();
         LojaMenu = new javax.swing.JMenu();
         cadastroLojaMenuItem = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
@@ -68,13 +70,21 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
         clienteMenu.setText("Clientes");
 
-        cadastroclienteMenuItem.setText("Cliente");
+        cadastroclienteMenuItem.setText("CadastroCliente");
         cadastroclienteMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastroclienteMenuItemActionPerformed(evt);
             }
         });
         clienteMenu.add(cadastroclienteMenuItem);
+
+        cadastroclienteMenuItem1.setText("Busca de Clientes");
+        cadastroclienteMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastroclienteMenuItem1ActionPerformed(evt);
+            }
+        });
+        clienteMenu.add(cadastroclienteMenuItem1);
 
         funçoesMenuBar.add(clienteMenu);
 
@@ -187,6 +197,15 @@ public class PrincipalFrame extends javax.swing.JFrame {
         principalPanel.add(telaFornecedor);
     }//GEN-LAST:event_cadastroFornecedorMenuItemActionPerformed
 
+    private void cadastroclienteMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroclienteMenuItem1ActionPerformed
+        if (telaBuscaCliente != null && telaBuscaCliente.isVisible()) {
+            return;
+        }
+        telaBuscaCliente = new BuscaClienteInternalFrame();
+        telaBuscaCliente.setVisible(true);
+        principalPanel.add(telaBuscaCliente);
+    }//GEN-LAST:event_cadastroclienteMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -229,6 +248,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem cadastroLojaMenuItem;
     private javax.swing.JMenuItem cadastroProdutoMenuItem;
     private javax.swing.JMenuItem cadastroclienteMenuItem;
+    private javax.swing.JMenuItem cadastroclienteMenuItem1;
     private javax.swing.JMenuItem cadastrocomprasMenuItem;
     private javax.swing.JMenu clienteMenu;
     private javax.swing.JMenu comprasMenu;

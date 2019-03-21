@@ -47,34 +47,6 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
 
     }
 
-    public void burcarpornome(String nome) {
-
-        DefaultTableModel clientes1 = (DefaultTableModel) clienteTable.getModel();
-        clientes1.setNumRows(0);
-
-        ClienteDAO pdao = new ClienteDAO();
-
-        for (Cliente c : pdao.buscar(nome)) {
-
-            clientes1.addRow(new Object[]{
-                c.getId(),
-                c.getNome(),
-                c.getEmail(),
-                c.getCPF(),
-                c.getTelefone(),
-                c.getSexo(),
-                c.getRua(),
-                c.getNumero(),
-                c.getBairro(),
-                c.getCidade(),
-                c.getCEP(),
-                c.getUF()
-            });
-
-        }
-
-    }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -110,9 +82,6 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         cadastrarClienteButton = new javax.swing.JButton();
         excluirButton = new javax.swing.JButton();
         atualizarButton = new javax.swing.JButton();
-        buscaPanel = new javax.swing.JPanel();
-        buscaTextField = new javax.swing.JTextField();
-        buscaButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         clienteTable = new javax.swing.JTable();
@@ -258,7 +227,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
                             .addComponent(cidadeLabel))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(cepClienteFormattedTextField)
-                    .addComponent(estadoClienteComboBox, 0, 264, Short.MAX_VALUE)
+                    .addComponent(estadoClienteComboBox, 0, 309, Short.MAX_VALUE)
                     .addComponent(cidadeClienteTextField)
                     .addComponent(bairroClienteTextField)
                     .addComponent(numeroClienteTextField1)
@@ -348,50 +317,12 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
                 .addComponent(atualizarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        buscaPanel.setBackground(new java.awt.Color(255, 167, 38));
-        buscaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busca", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
-        buscaPanel.setForeground(new java.awt.Color(255, 255, 255));
-
-        buscaTextField.setBorder(null);
-        buscaTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscaTextFieldActionPerformed(evt);
-            }
-        });
-
-        buscaButton.setBackground(new java.awt.Color(255, 153, 51));
-        buscaButton.setForeground(new java.awt.Color(255, 255, 255));
-        buscaButton.setText("Buscar");
-        buscaButton.setBorder(null);
-        buscaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscaButtonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout buscaPanelLayout = new javax.swing.GroupLayout(buscaPanel);
-        buscaPanel.setLayout(buscaPanelLayout);
-        buscaPanelLayout.setHorizontalGroup(
-            buscaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(buscaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(buscaPanelLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(buscaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        buscaPanelLayout.setVerticalGroup(
-            buscaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buscaPanelLayout.createSequentialGroup()
-                .addComponent(buscaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buscaButton, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout dadosPessoaisPanelLayout = new javax.swing.GroupLayout(dadosPessoaisPanel);
         dadosPessoaisPanel.setLayout(dadosPessoaisPanelLayout);
         dadosPessoaisPanelLayout.setHorizontalGroup(
             dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(nomeLabel)
                     .addComponent(cpfLabel)
@@ -400,7 +331,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
                     .addComponent(telefoneClienteLabel)
                     .addComponent(telefoneClienteFormattedTextField, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(cpfLabel1)
-                    .addComponent(nomeClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nomeClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
                         .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tipoTelefoneLabel)
@@ -410,46 +341,42 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
                                 .addComponent(sexoComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(buttonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21)))
-                .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(emailLabel)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(enderecoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addComponent(buscaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(66, 66, 66)))
+                .addComponent(emailLabel)
+                .addGap(60, 60, 60)
+                .addComponent(enderecoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         dadosPessoaisPanelLayout.setVerticalGroup(
             dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(enderecoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3)
+                        .addComponent(enderecoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(emailLabel))
+                    .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
+                        .addComponent(cpfLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nomeClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(telefoneClienteFormattedTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dadosPessoaisPanelLayout.createSequentialGroup()
+                                .addComponent(nomeLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(emailClienteTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cpfLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cpfClienteFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(telefoneClienteLabel)
+                                .addGap(33, 33, 33)))
+                        .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
-                                .addComponent(cpfLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nomeClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(telefoneClienteFormattedTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dadosPessoaisPanelLayout.createSequentialGroup()
-                                        .addComponent(nomeLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(emailClienteTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cpfLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cpfClienteFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(telefoneClienteLabel)
-                                        .addGap(33, 33, 33)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tipoTelefoneLabel)
                                 .addGap(17, 17, 17)
@@ -457,12 +384,11 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
                                 .addGap(9, 9, 9)
                                 .addComponent(sexoLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(sexoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addComponent(buscaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(emailLabel))
+                                .addComponent(sexoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dadosPessoaisPanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(buttonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap())
         );
 
         clienteTable.setBackground(new java.awt.Color(255, 167, 38));
@@ -476,7 +402,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -503,7 +429,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -511,7 +437,9 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(dadosPessoaisPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(dadosPessoaisPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -638,7 +566,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
             c.setCidade(cidadeClienteTextField.getText());
             c.setCEP(cepClienteFormattedTextField.getText());
             c.setUF((String) estadoClienteComboBox.getSelectedItem());
-            c.setId((int) clienteTable.getValueAt(clienteTable.getSelectedRow(), 0));
+            //c.setId((int) clienteTable.getValueAt(clienteTable.getSelectedRow(), 0));
 
             dao.update(c);
 
@@ -699,35 +627,10 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_clienteTableKeyReleased
 
-    private void buscaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscaButtonActionPerformed
-
-        String busca = buscaTextField.getText();
-
-        if (busca.isEmpty()) {
-            
-            readTable();
-            JOptionPane.showMessageDialog(null, "Digite um nome para buscar ! ");
-            
-
-        } else {
-
-            burcarpornome(buscaTextField.getText());
-    }
-
-
-    }//GEN-LAST:event_buscaButtonActionPerformed
-
-    private void buscaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscaTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buscaTextFieldActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atualizarButton;
     private javax.swing.JTextField bairroClienteTextField;
     private javax.swing.JLabel bairroLabel;
-    private javax.swing.JButton buscaButton;
-    private javax.swing.JPanel buscaPanel;
-    private javax.swing.JTextField buscaTextField;
     private javax.swing.JPanel buttonPanel;
     private javax.swing.JButton cadastrarClienteButton;
     private javax.swing.JFormattedTextField cepClienteFormattedTextField;
@@ -760,6 +663,5 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel tipoTelefoneLabel;
     private javax.swing.JLabel ufLabel;
     // End of variables declaration//GEN-END:variables
-
 
 }

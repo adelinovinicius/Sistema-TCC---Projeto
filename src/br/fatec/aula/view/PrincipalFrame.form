@@ -24,10 +24,18 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="cadastroclienteMenuItem">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cliente"/>
+                <Property name="text" type="java.lang.String" value="CadastroCliente"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastroclienteMenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="cadastroclienteMenuItem1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Busca de Clientes"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastroclienteMenuItem1ActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
