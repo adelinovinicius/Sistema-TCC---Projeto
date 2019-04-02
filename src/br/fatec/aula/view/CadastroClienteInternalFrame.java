@@ -391,8 +391,6 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        clienteTable.setBackground(new java.awt.Color(255, 167, 38));
-        clienteTable.setForeground(new java.awt.Color(255, 255, 255));
         clienteTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

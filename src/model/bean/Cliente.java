@@ -112,8 +112,4 @@ public class Cliente {
         this.UF = UF;
     }
 
-    public void add(Cliente cliente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }
