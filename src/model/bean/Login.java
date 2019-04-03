@@ -6,23 +6,14 @@ public class Login {
     private int id;
     private String usuario;
     private String senha;
-    private int codidfornecedor;
-    private int codidloja;
+    private String tipo;
 
-    public int getCodidfornecedor() {
-        return codidfornecedor;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setCodidfornecedor(int codidfornecedor) {
-        this.codidfornecedor = codidfornecedor;
-    }
-
-    public int getCodidloja() {
-        return codidloja;
-    }
-
-    public void setCodidloja(int codidloja) {
-        this.codidloja = codidloja;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public int getId() {
