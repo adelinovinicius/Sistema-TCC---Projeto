@@ -5,6 +5,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
     public PrincipalFrame() {
         initComponents();
+        this.setLocationRelativeTo(null);
    
     }
 
@@ -23,6 +24,11 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         principalPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        opcoesPanel = new javax.swing.JPanel();
+        clienteButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        funcoesPanel = new javax.swing.JPanel();
+        cadastroClienteButton = new javax.swing.JButton();
         funçoesMenuBar = new javax.swing.JMenuBar();
         clienteMenu = new javax.swing.JMenu();
         cadastroclienteMenuItem = new javax.swing.JMenuItem();
@@ -53,16 +59,67 @@ public class PrincipalFrame extends javax.swing.JFrame {
         principalPanelLayout.setHorizontalGroup(
             principalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, principalPanelLayout.createSequentialGroup()
-                .addContainerGap(134, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap())
+                .addContainerGap(215, Short.MAX_VALUE)
+                .addComponent(jLabel1))
         );
         principalPanelLayout.setVerticalGroup(
             principalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, principalPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(principalPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        clienteButton.setText("Cliente");
+        clienteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clienteButtonActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Loja");
+
+        javax.swing.GroupLayout opcoesPanelLayout = new javax.swing.GroupLayout(opcoesPanel);
+        opcoesPanel.setLayout(opcoesPanelLayout);
+        opcoesPanelLayout.setHorizontalGroup(
+            opcoesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(opcoesPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(opcoesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clienteButton, javax.swing.GroupLayout.Alignment.LEADING))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        opcoesPanelLayout.setVerticalGroup(
+            opcoesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(opcoesPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(clienteButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        cadastroClienteButton.setText("Cadastro");
+        cadastroClienteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastroClienteButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout funcoesPanelLayout = new javax.swing.GroupLayout(funcoesPanel);
+        funcoesPanel.setLayout(funcoesPanelLayout);
+        funcoesPanelLayout.setHorizontalGroup(
+            funcoesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(funcoesPanelLayout.createSequentialGroup()
+                .addComponent(cadastroClienteButton)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        funcoesPanelLayout.setVerticalGroup(
+            funcoesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(funcoesPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cadastroClienteButton)
+                .addContainerGap(302, Short.MAX_VALUE))
         );
 
         funçoesMenuBar.setBackground(new java.awt.Color(255, 255, 255));
@@ -142,11 +199,18 @@ public class PrincipalFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(principalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(opcoesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addComponent(funcoesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(principalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(principalPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(principalPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(opcoesPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(funcoesPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -162,12 +226,12 @@ public class PrincipalFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastrocomprasMenuItemActionPerformed
 
     private void cadastroclienteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroclienteMenuItemActionPerformed
-        if (telaCliente != null && telaCliente.isVisible()) {
+        /*if (telaCliente != null && telaCliente.isVisible()) {
             return;
         }
         telaCliente = new CadastroClienteInternalFrame();
         telaCliente.setVisible(true);
-        principalPanel.add(telaCliente);
+        principalPanel.add(telaCliente);*/
     }//GEN-LAST:event_cadastroclienteMenuItemActionPerformed
 
     private void cadastroLojaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroLojaMenuItemActionPerformed
@@ -205,6 +269,19 @@ public class PrincipalFrame extends javax.swing.JFrame {
         telaBuscaCliente.setVisible(true);
         principalPanel.add(telaBuscaCliente);
     }//GEN-LAST:event_cadastroclienteMenuItem1ActionPerformed
+
+    private void clienteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clienteButtonActionPerformed
+        
+    }//GEN-LAST:event_clienteButtonActionPerformed
+
+    private void cadastroClienteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroClienteButtonActionPerformed
+        if (telaCliente != null && telaCliente.isVisible()) {
+            return;
+        }
+        telaCliente = new CadastroClienteInternalFrame();
+        telaCliente.setVisible(true);
+        principalPanel.add(telaCliente);
+    }//GEN-LAST:event_cadastroClienteButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,18 +321,23 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu LojaMenu;
+    private javax.swing.JButton cadastroClienteButton;
     private javax.swing.JMenuItem cadastroFornecedorMenuItem;
     private javax.swing.JMenuItem cadastroLojaMenuItem;
     private javax.swing.JMenuItem cadastroProdutoMenuItem;
     private javax.swing.JMenuItem cadastroclienteMenuItem;
     private javax.swing.JMenuItem cadastroclienteMenuItem1;
     private javax.swing.JMenuItem cadastrocomprasMenuItem;
+    private javax.swing.JButton clienteButton;
     private javax.swing.JMenu clienteMenu;
     private javax.swing.JMenu comprasMenu;
+    private javax.swing.JPanel funcoesPanel;
     private javax.swing.JMenuBar funçoesMenuBar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPanel opcoesPanel;
     private javax.swing.JPanel principalPanel;
     private javax.swing.JMenu produtoMenu;
     // End of variables declaration//GEN-END:variables

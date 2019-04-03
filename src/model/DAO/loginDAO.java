@@ -20,10 +20,11 @@ public void create(Login l) {
 
         try {
             stmt = con.prepareStatement("INSERT INTO usuario (usuario, "
-                    + "senha)VALUES(?,?)");
+                    + "senha,tipoUsuario)VALUES(?,?,?)");
 
             stmt.setString(1, l.getUsuario());
             stmt.setString(2, l.getSenha());
+            stmt.setString(3,l.getTipo());
 
             stmt.executeUpdate();
 
