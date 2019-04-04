@@ -102,7 +102,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
 
         sexoComboBox.setForeground(new java.awt.Color(255, 167, 38));
         sexoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Feminino", "Masculino", "Outro" }));
-        sexoComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        sexoComboBox.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 167, 38)));
         sexoComboBox.setFocusable(false);
         sexoComboBox.setOpaque(false);
 
@@ -144,7 +144,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
 
         tipoTelefoneComboBox.setForeground(new java.awt.Color(255, 167, 38));
         tipoTelefoneComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Celular Pessoal", "Celular Contato", "Telefone Pessoal", "Telefone Contato" }));
-        tipoTelefoneComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tipoTelefoneComboBox.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 167, 38)));
         tipoTelefoneComboBox.setFocusable(false);
         tipoTelefoneComboBox.setOpaque(false);
         tipoTelefoneComboBox.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
@@ -187,7 +187,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
 
         estadoClienteComboBox.setForeground(new java.awt.Color(255, 167, 38));
         estadoClienteComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
-        estadoClienteComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        estadoClienteComboBox.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 167, 38)));
         estadoClienteComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 estadoClienteComboBoxActionPerformed(evt);
@@ -249,13 +249,12 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
                             .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
                                 .addComponent(tipoTelefoneComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(sexoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 21, Short.MAX_VALUE))
-                    .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
-                        .addComponent(cadastrarClienteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(atualizarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(sexoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
+                                .addComponent(cadastrarClienteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(atualizarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 21, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(estadoClienteComboBox, 0, 273, Short.MAX_VALUE)
@@ -264,16 +263,13 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
                     .addComponent(ruaClienteTextField)
                     .addComponent(bairroClienteTextField)
                     .addComponent(cepClienteFormattedTextField)
-                    .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
-                        .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(emailLabel)
-                            .addComponent(cepLabel)
-                            .addComponent(ufLabel)
-                            .addComponent(ruaLabel)
-                            .addComponent(cidadeLabel)
-                            .addComponent(numeroLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bairroLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                    .addComponent(emailLabel)
+                    .addComponent(cepLabel)
+                    .addComponent(ufLabel)
+                    .addComponent(ruaLabel)
+                    .addComponent(cidadeLabel)
+                    .addComponent(numeroLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bairroLabel))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         dadosPessoaisPanelLayout.setVerticalGroup(

@@ -17,6 +17,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private comprasInternalFrame telaEvento = null;
     private EntregadorInternalFrame telaFornecedor = null;
     private BuscaClienteInternalFrame telaBuscaCliente = null;
+    private BuscaLojaInternalFrame telaBuscaLoja = null;
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -41,7 +42,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
         setTitle("Sistema de Compras");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        principalPanel.setBackground(new java.awt.Color(255, 255, 255));
+        principalPanel.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
@@ -95,7 +96,13 @@ public class PrincipalFrame extends javax.swing.JFrame {
         });
         LojaMenu.add(cadastroLojaMenuItem);
 
+        jMenuItem1.setBackground(new java.awt.Color(255, 255, 255));
         jMenuItem1.setText("Buscar Loja");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         LojaMenu.add(jMenuItem1);
 
         funçoesMenuBar.add(LojaMenu);
@@ -205,6 +212,15 @@ public class PrincipalFrame extends javax.swing.JFrame {
         telaBuscaCliente.setVisible(true);
         principalPanel.add(telaBuscaCliente);
     }//GEN-LAST:event_cadastroclienteMenuItem1ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        if (telaBuscaLoja != null && telaBuscaLoja.isVisible()) {
+            return;
+        }
+        telaBuscaLoja = new BuscaLojaInternalFrame();
+        telaBuscaLoja.setVisible(true);
+        principalPanel.add(telaBuscaLoja);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
