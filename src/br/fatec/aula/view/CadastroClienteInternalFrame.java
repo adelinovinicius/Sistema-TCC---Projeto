@@ -65,22 +65,19 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         telefoneClienteFormattedTextField = new javax.swing.JFormattedTextField();
         tipoTelefoneLabel = new javax.swing.JLabel();
         tipoTelefoneComboBox = new javax.swing.JComboBox<>();
-        enderecoPanel = new javax.swing.JPanel();
-        ruaClienteTextField = new javax.swing.JTextField();
         ruaLabel = new javax.swing.JLabel();
-        bairroLabel = new javax.swing.JLabel();
-        cidadeLabel = new javax.swing.JLabel();
-        cidadeClienteTextField = new javax.swing.JTextField();
-        bairroClienteTextField = new javax.swing.JTextField();
-        cepClienteFormattedTextField = new javax.swing.JFormattedTextField();
-        estadoClienteComboBox = new javax.swing.JComboBox<>();
-        ufLabel = new javax.swing.JLabel();
-        cepLabel = new javax.swing.JLabel();
+        ruaClienteTextField = new javax.swing.JTextField();
         numeroLabel1 = new javax.swing.JLabel();
         numeroClienteTextField1 = new javax.swing.JTextField();
-        buttonPanel = new javax.swing.JPanel();
+        bairroLabel = new javax.swing.JLabel();
+        bairroClienteTextField = new javax.swing.JTextField();
+        cidadeLabel = new javax.swing.JLabel();
+        cidadeClienteTextField = new javax.swing.JTextField();
+        ufLabel = new javax.swing.JLabel();
+        estadoClienteComboBox = new javax.swing.JComboBox<>();
+        cepLabel = new javax.swing.JLabel();
+        cepClienteFormattedTextField = new javax.swing.JFormattedTextField();
         cadastrarClienteButton = new javax.swing.JButton();
-        excluirButton = new javax.swing.JButton();
         atualizarButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -89,40 +86,40 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         setClosable(true);
         setTitle("Cliente");
 
-        dadosPessoaisPanel.setBackground(new java.awt.Color(255, 167, 38));
-        dadosPessoaisPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        dadosPessoaisPanel.setBackground(new java.awt.Color(255, 255, 255));
         dadosPessoaisPanel.setForeground(new java.awt.Color(255, 255, 255));
         dadosPessoaisPanel.setToolTipText("");
 
-        nomeLabel.setForeground(new java.awt.Color(255, 255, 255));
+        nomeLabel.setForeground(new java.awt.Color(255, 167, 38));
         nomeLabel.setText("E - Mail");
 
-        cpfLabel.setForeground(new java.awt.Color(255, 255, 255));
+        cpfLabel.setForeground(new java.awt.Color(255, 167, 38));
         cpfLabel.setText("CPF");
         cpfLabel.setToolTipText("");
 
-        sexoLabel.setForeground(new java.awt.Color(255, 255, 255));
+        sexoLabel.setForeground(new java.awt.Color(255, 167, 38));
         sexoLabel.setText("Sexo");
 
+        sexoComboBox.setForeground(new java.awt.Color(255, 167, 38));
         sexoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Feminino", "Masculino", "Outro" }));
         sexoComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         sexoComboBox.setFocusable(false);
         sexoComboBox.setOpaque(false);
 
-        cpfClienteFormattedTextField.setBorder(null);
+        cpfClienteFormattedTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 167, 38)));
         try {
             cpfClienteFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
-        emailClienteTextField.setBorder(null);
+        emailClienteTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 167, 38)));
 
-        cpfLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        cpfLabel1.setForeground(new java.awt.Color(255, 167, 38));
         cpfLabel1.setText("Nome ");
         cpfLabel1.setToolTipText("");
 
-        nomeClienteTextField.setBorder(null);
+        nomeClienteTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 167, 38)));
         nomeClienteTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nomeClienteTextFieldActionPerformed(evt);
@@ -131,10 +128,10 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
 
         emailLabel.setForeground(new java.awt.Color(255, 255, 255));
 
-        telefoneClienteLabel.setForeground(new java.awt.Color(255, 255, 255));
+        telefoneClienteLabel.setForeground(new java.awt.Color(255, 167, 38));
         telefoneClienteLabel.setText("Telefone");
 
-        telefoneClienteFormattedTextField.setBorder(null);
+        telefoneClienteFormattedTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 167, 38)));
         try {
             telefoneClienteFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) 9####-####")));
         } catch (java.text.ParseException ex) {
@@ -142,9 +139,10 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         }
         telefoneClienteFormattedTextField.setSelectedTextColor(new java.awt.Color(0, 0, 0));
 
-        tipoTelefoneLabel.setForeground(new java.awt.Color(255, 255, 255));
+        tipoTelefoneLabel.setForeground(new java.awt.Color(255, 167, 38));
         tipoTelefoneLabel.setText("Tipo");
 
+        tipoTelefoneComboBox.setForeground(new java.awt.Color(255, 167, 38));
         tipoTelefoneComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Celular Pessoal", "Celular Contato", "Telefone Pessoal", "Telefone Contato" }));
         tipoTelefoneComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tipoTelefoneComboBox.setFocusable(false);
@@ -159,35 +157,35 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
             }
         });
 
-        enderecoPanel.setBackground(new java.awt.Color(255, 167, 38));
-        enderecoPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Endereço", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
-        enderecoPanel.setForeground(new java.awt.Color(255, 255, 255));
-
-        ruaClienteTextField.setBorder(null);
-
-        ruaLabel.setForeground(new java.awt.Color(255, 255, 255));
+        ruaLabel.setForeground(new java.awt.Color(255, 167, 38));
         ruaLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         ruaLabel.setText("Rua");
 
-        bairroLabel.setForeground(new java.awt.Color(255, 255, 255));
+        ruaClienteTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 167, 38)));
+
+        numeroLabel1.setForeground(new java.awt.Color(255, 167, 38));
+        numeroLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        numeroLabel1.setText("N°");
+
+        numeroClienteTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 167, 38)));
+
+        bairroLabel.setForeground(new java.awt.Color(255, 167, 38));
         bairroLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         bairroLabel.setText("Bairro");
 
-        cidadeLabel.setForeground(new java.awt.Color(255, 255, 255));
+        bairroClienteTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 167, 38)));
+
+        cidadeLabel.setForeground(new java.awt.Color(255, 167, 38));
         cidadeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         cidadeLabel.setText("Cidade");
 
-        cidadeClienteTextField.setBorder(null);
+        cidadeClienteTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 167, 38)));
 
-        bairroClienteTextField.setBorder(null);
+        ufLabel.setForeground(new java.awt.Color(255, 167, 38));
+        ufLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        ufLabel.setText("UF");
 
-        cepClienteFormattedTextField.setBorder(null);
-        try {
-            cepClienteFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-
+        estadoClienteComboBox.setForeground(new java.awt.Color(255, 167, 38));
         estadoClienteComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
         estadoClienteComboBox.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         estadoClienteComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -196,74 +194,16 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
             }
         });
 
-        ufLabel.setForeground(new java.awt.Color(255, 255, 255));
-        ufLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        ufLabel.setText("UF");
-
-        cepLabel.setForeground(new java.awt.Color(255, 255, 255));
+        cepLabel.setForeground(new java.awt.Color(255, 167, 38));
         cepLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         cepLabel.setText("CEP");
 
-        numeroLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        numeroLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        numeroLabel1.setText("N°");
-
-        numeroClienteTextField1.setBorder(null);
-
-        javax.swing.GroupLayout enderecoPanelLayout = new javax.swing.GroupLayout(enderecoPanel);
-        enderecoPanel.setLayout(enderecoPanelLayout);
-        enderecoPanelLayout.setHorizontalGroup(
-            enderecoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(enderecoPanelLayout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addGroup(enderecoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(enderecoPanelLayout.createSequentialGroup()
-                        .addGroup(enderecoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ufLabel)
-                            .addComponent(cepLabel)
-                            .addComponent(bairroLabel)
-                            .addComponent(ruaLabel)
-                            .addComponent(numeroLabel1)
-                            .addComponent(cidadeLabel))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(cepClienteFormattedTextField)
-                    .addComponent(estadoClienteComboBox, 0, 309, Short.MAX_VALUE)
-                    .addComponent(cidadeClienteTextField)
-                    .addComponent(bairroClienteTextField)
-                    .addComponent(numeroClienteTextField1)
-                    .addComponent(ruaClienteTextField, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
-        );
-        enderecoPanelLayout.setVerticalGroup(
-            enderecoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(enderecoPanelLayout.createSequentialGroup()
-                .addComponent(ruaLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ruaClienteTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(numeroLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(numeroClienteTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bairroLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bairroClienteTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cidadeLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cidadeClienteTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ufLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(estadoClienteComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cepLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cepClienteFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        buttonPanel.setBackground(new java.awt.Color(255, 167, 38));
+        cepClienteFormattedTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 167, 38)));
+        try {
+            cepClienteFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         cadastrarClienteButton.setBackground(new java.awt.Color(255, 153, 51));
         cadastrarClienteButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -272,16 +212,6 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         cadastrarClienteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastrarClienteButtonActionPerformed(evt);
-            }
-        });
-
-        excluirButton.setBackground(new java.awt.Color(255, 153, 51));
-        excluirButton.setForeground(new java.awt.Color(255, 255, 255));
-        excluirButton.setText("Excluir");
-        excluirButton.setBorder(null);
-        excluirButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                excluirButtonActionPerformed(evt);
             }
         });
 
@@ -295,57 +225,56 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
             }
         });
 
-        javax.swing.GroupLayout buttonPanelLayout = new javax.swing.GroupLayout(buttonPanel);
-        buttonPanel.setLayout(buttonPanelLayout);
-        buttonPanelLayout.setHorizontalGroup(
-            buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buttonPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cadastrarClienteButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(excluirButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(atualizarButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-        buttonPanelLayout.setVerticalGroup(
-            buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buttonPanelLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(cadastrarClienteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(excluirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(atualizarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
         javax.swing.GroupLayout dadosPessoaisPanelLayout = new javax.swing.GroupLayout(dadosPessoaisPanel);
         dadosPessoaisPanel.setLayout(dadosPessoaisPanelLayout);
         dadosPessoaisPanelLayout.setHorizontalGroup(
             dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(nomeLabel)
-                    .addComponent(cpfLabel)
+                .addContainerGap()
+                .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(telefoneClienteFormattedTextField)
                     .addComponent(cpfClienteFormattedTextField)
                     .addComponent(emailClienteTextField)
-                    .addComponent(telefoneClienteLabel)
-                    .addComponent(telefoneClienteFormattedTextField, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(cpfLabel1)
-                    .addComponent(nomeClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nomeClienteTextField)
                     .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
                         .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tipoTelefoneLabel)
-                            .addComponent(sexoLabel)
-                            .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(tipoTelefoneComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, 131, Short.MAX_VALUE)
-                                .addComponent(sexoComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(buttonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)))
-                .addComponent(emailLabel)
-                .addGap(60, 60, 60)
-                .addComponent(enderecoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                            .addComponent(nomeLabel)
+                            .addComponent(cpfLabel)
+                            .addComponent(telefoneClienteLabel)
+                            .addComponent(cpfLabel1)
+                            .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
+                                .addComponent(tipoTelefoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(81, 81, 81)
+                                .addComponent(sexoLabel))
+                            .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
+                                .addComponent(tipoTelefoneComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(sexoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 21, Short.MAX_VALUE))
+                    .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
+                        .addComponent(cadastrarClienteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(atualizarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(estadoClienteComboBox, 0, 273, Short.MAX_VALUE)
+                    .addComponent(cidadeClienteTextField)
+                    .addComponent(numeroClienteTextField1)
+                    .addComponent(ruaClienteTextField)
+                    .addComponent(bairroClienteTextField)
+                    .addComponent(cepClienteFormattedTextField)
+                    .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
+                        .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(emailLabel)
+                            .addComponent(cepLabel)
+                            .addComponent(ufLabel)
+                            .addComponent(ruaLabel)
+                            .addComponent(cidadeLabel)
+                            .addComponent(numeroLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bairroLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         dadosPessoaisPanelLayout.setVerticalGroup(
             dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -353,42 +282,63 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(enderecoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(emailLabel))
-                    .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
-                        .addComponent(cpfLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nomeClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cpfLabel1)
+                            .addComponent(ruaLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(telefoneClienteFormattedTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dadosPessoaisPanelLayout.createSequentialGroup()
-                                .addComponent(nomeLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(emailClienteTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cpfLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cpfClienteFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(telefoneClienteLabel)
-                                .addGap(33, 33, 33)))
+                            .addComponent(ruaClienteTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nomeClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(numeroLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(emailClienteTextField)
+                            .addComponent(numeroClienteTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cpfLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bairroLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cpfClienteFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bairroClienteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(telefoneClienteLabel)
+                            .addComponent(cidadeLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cidadeClienteTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(telefoneClienteFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tipoTelefoneLabel)
-                                .addGap(17, 17, 17)
-                                .addComponent(tipoTelefoneComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(9, 9, 9)
                                 .addComponent(sexoLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(sexoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dadosPessoaisPanelLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(buttonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap())
+                                .addComponent(sexoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(130, 130, 130))
+                            .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
+                                .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(ufLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(tipoTelefoneLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(estadoClienteComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tipoTelefoneComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cepLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(dadosPessoaisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(cepClienteFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cadastrarClienteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(atualizarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(dadosPessoaisPanelLayout.createSequentialGroup()
+                        .addComponent(emailLabel)
+                        .addContainerGap())))
         );
 
         clienteTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -396,7 +346,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "Nome", "Email", "CPF", "Telefone", "Sexo", "Rua", "Numero", "Bairro", "Cidade", "CEP", "UF"
+                "ID", "Nome", "Email", "CPF", "Tel.", "Sexo", "Rua", "N°", "Bairro", "Cidade", "CEP", "UF"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -427,7 +377,9 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -435,14 +387,12 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(dadosPessoaisPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(dadosPessoaisPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(dadosPessoaisPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dadosPessoaisPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -470,74 +420,6 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_tipoTelefoneComboBoxPopupMenuWillBecomeInvisible
 
-    private void excluirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirButtonActionPerformed
-
-        if (clienteTable.getSelectedRow() != -1) {
-
-            Cliente c = new Cliente();
-            ClienteDAO dao = new ClienteDAO();
-
-            c.setId((int) clienteTable.getValueAt(clienteTable.getSelectedRow(), 0));
-
-            dao.delete(c);
-
-            nomeClienteTextField.setText("");
-            emailClienteTextField.setText("");
-            cpfClienteFormattedTextField.setText("");
-            sexoComboBox.setSelectedIndex(0);
-            ruaClienteTextField.setText("");
-            bairroClienteTextField.setText("");
-            cidadeClienteTextField.setText("");
-            cepClienteFormattedTextField.setText("");
-            estadoClienteComboBox.setSelectedIndex(0);
-            telefoneClienteFormattedTextField.setText("");
-            tipoTelefoneComboBox.setSelectedIndex(0);
-            numeroClienteTextField1.setText("");
-
-            readTable();
-
-        } else {
-            JOptionPane.showMessageDialog(null, "Selecione um produto para excluir.");
-        }
-
-    }//GEN-LAST:event_excluirButtonActionPerformed
-
-    private void cadastrarClienteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarClienteButtonActionPerformed
-
-        Cliente c = new Cliente();
-        ClienteDAO dao = new ClienteDAO();
-
-        c.setNome(nomeClienteTextField.getText());
-        c.setEmail(emailClienteTextField.getText());
-        c.setCPF(cpfClienteFormattedTextField.getText());
-        c.setTelefone(telefoneClienteFormattedTextField.getText());
-        c.setSexo((String) sexoComboBox.getSelectedItem());
-        c.setRua(ruaClienteTextField.getText());
-        c.setNumero((Integer.parseInt(numeroClienteTextField1.getText())));
-        c.setBairro(bairroClienteTextField.getText());
-        c.setCidade(cidadeClienteTextField.getText());
-        c.setCEP(cepClienteFormattedTextField.getText());
-        c.setUF((String) estadoClienteComboBox.getSelectedItem());
-
-        dao.create(c);
-
-        nomeClienteTextField.setText("");
-        emailClienteTextField.setText("");
-        cpfClienteFormattedTextField.setText("");
-        sexoComboBox.setSelectedIndex(0);
-        ruaClienteTextField.setText("");
-        bairroClienteTextField.setText("");
-        cidadeClienteTextField.setText("");
-        cepClienteFormattedTextField.setText("");
-        estadoClienteComboBox.setSelectedIndex(0);
-        telefoneClienteFormattedTextField.setText("");
-        tipoTelefoneComboBox.setSelectedIndex(0);
-        numeroClienteTextField1.setText("");
-
-        readTable();
-
-    }//GEN-LAST:event_cadastrarClienteButtonActionPerformed
-
     private void estadoClienteComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadoClienteComboBoxActionPerformed
 
     }//GEN-LAST:event_estadoClienteComboBoxActionPerformed
@@ -564,7 +446,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
             c.setCidade(cidadeClienteTextField.getText());
             c.setCEP(cepClienteFormattedTextField.getText());
             c.setUF((String) estadoClienteComboBox.getSelectedItem());
-            //c.setId((int) clienteTable.getValueAt(clienteTable.getSelectedRow(), 0));
+            c.setId((int) clienteTable.getValueAt(clienteTable.getSelectedRow(), 0));
 
             dao.update(c);
 
@@ -625,11 +507,45 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_clienteTableKeyReleased
 
+    private void cadastrarClienteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarClienteButtonActionPerformed
+
+        Cliente c = new Cliente();
+        ClienteDAO dao = new ClienteDAO();
+
+        c.setNome(nomeClienteTextField.getText());
+        c.setEmail(emailClienteTextField.getText());
+        c.setCPF(cpfClienteFormattedTextField.getText());
+        c.setTelefone(telefoneClienteFormattedTextField.getText());
+        c.setSexo((String) sexoComboBox.getSelectedItem());
+        c.setRua(ruaClienteTextField.getText());
+        c.setNumero((Integer.parseInt(numeroClienteTextField1.getText())));
+        c.setBairro(bairroClienteTextField.getText());
+        c.setCidade(cidadeClienteTextField.getText());
+        c.setCEP(cepClienteFormattedTextField.getText());
+        c.setUF((String) estadoClienteComboBox.getSelectedItem());
+
+        dao.create(c);
+
+        nomeClienteTextField.setText("");
+        emailClienteTextField.setText("");
+        cpfClienteFormattedTextField.setText("");
+        sexoComboBox.setSelectedIndex(0);
+        ruaClienteTextField.setText("");
+        bairroClienteTextField.setText("");
+        cidadeClienteTextField.setText("");
+        cepClienteFormattedTextField.setText("");
+        estadoClienteComboBox.setSelectedIndex(0);
+        telefoneClienteFormattedTextField.setText("");
+        tipoTelefoneComboBox.setSelectedIndex(0);
+        numeroClienteTextField1.setText("");
+
+        readTable();
+    }//GEN-LAST:event_cadastrarClienteButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atualizarButton;
     private javax.swing.JTextField bairroClienteTextField;
     private javax.swing.JLabel bairroLabel;
-    private javax.swing.JPanel buttonPanel;
     private javax.swing.JButton cadastrarClienteButton;
     private javax.swing.JFormattedTextField cepClienteFormattedTextField;
     private javax.swing.JLabel cepLabel;
@@ -642,9 +558,7 @@ public class CadastroClienteInternalFrame extends javax.swing.JInternalFrame {
     private javax.swing.JPanel dadosPessoaisPanel;
     private javax.swing.JTextField emailClienteTextField;
     private javax.swing.JLabel emailLabel;
-    private javax.swing.JPanel enderecoPanel;
     private javax.swing.JComboBox<String> estadoClienteComboBox;
-    private javax.swing.JButton excluirButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField nomeClienteTextField;
