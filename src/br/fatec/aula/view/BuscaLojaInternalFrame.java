@@ -84,7 +84,7 @@ public class BuscaLojaInternalFrame extends javax.swing.JInternalFrame {
         LojaTable2 = new javax.swing.JTable();
 
         setClosable(true);
-        setTitle("Buscar/Deletar Cliente");
+        setTitle("Buscar/Deletar Loja");
 
         buscaPanel.setBackground(new java.awt.Color(255, 255, 255));
         buscaPanel.setForeground(new java.awt.Color(255, 255, 255));
@@ -99,7 +99,7 @@ public class BuscaLojaInternalFrame extends javax.swing.JInternalFrame {
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 167, 38));
-        jLabel1.setText("Nome Cliente");
+        jLabel1.setText("Nome Loja");
 
         buscarLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         buscarLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/fatec/aula/photo/findtheuser_search_search_theuser_4518.png"))); // NOI18N
@@ -117,6 +117,7 @@ public class BuscaLojaInternalFrame extends javax.swing.JInternalFrame {
             }
         });
 
+        LojaTable2.setForeground(new java.awt.Color(255, 167, 38));
         LojaTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

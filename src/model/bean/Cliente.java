@@ -9,12 +9,12 @@ public class Cliente {
     private String CPF;
     private String telefone;
     private String sexo;
-    private String rua;
+    String rua;
     private int numero;
-    private String bairro;
-    private String cidade;
-    private String CEP;
-    private String UF;
+    String bairro;
+    String cidade;
+    String CEP;
+    String UF;
 
     public int getId() {
         return id;

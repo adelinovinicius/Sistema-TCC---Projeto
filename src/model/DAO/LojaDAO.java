@@ -15,11 +15,10 @@ import model.bean.Loja;
 
 public class LojaDAO {
     
+    Connection con = ConnectionFactory.getConnection();
+    PreparedStatement stmt = null;
+    
     public void create(Loja l) {
-        
-        Connection con = ConnectionFactory.getConnection();
-        
-        PreparedStatement stmt = null;
 
         try {
             stmt = con.prepareStatement("INSERT INTO loja (nomeLoja, "
@@ -51,8 +50,6 @@ public class LojaDAO {
  }
     public List<Loja> read() {
 
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
         ResultSet rs = null;
 
         List<Loja> Lojas = new ArrayList<>();
@@ -91,10 +88,8 @@ public class LojaDAO {
         return Lojas;
 
     }
+    
     public void update(Loja l) {
-
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
 
         try {
             stmt = con.prepareStatement("UPDATE loja SET nomeLoja = ?,"
@@ -129,9 +124,6 @@ public class LojaDAO {
     
     public void delete(Loja l) {
 
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-
         try {
             stmt = con.prepareStatement("DELETE FROM loja WHERE idLoja = ?");
             stmt.setInt(1, l.getId());
@@ -141,7 +133,8 @@ public class LojaDAO {
             JOptionPane.showMessageDialog(null, "Removido com Sucesso!");
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao Remover!" + ex);
+            JOptionPane.showMessageDialog(null, "Erro ao Remover, Esta Tabela "
+                    + "esta sendo Usada!");
         } finally {
             ConnectionFactory.closeConnection(con, stmt);
         }
@@ -149,8 +142,6 @@ public class LojaDAO {
     
     public List<Loja> buscar(String nome) {
 
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
         ResultSet rs = null;
 
         List<Loja> lojas = new ArrayList<>();

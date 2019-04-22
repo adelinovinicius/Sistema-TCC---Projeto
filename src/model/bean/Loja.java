@@ -15,6 +15,16 @@ public class Loja {
     private String bairro;
     private String cidade;
     private String UF;
+    
+    public Loja(){
+        
+    }
+    
+    public Loja(String nome){
+       
+        this.nome = nome;
+        
+    }
 
     public int getId() {
         return id;
@@ -111,7 +121,9 @@ public class Loja {
     public void setUF(String UF) {
         this.UF = UF;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return getNome();
+    }
 }

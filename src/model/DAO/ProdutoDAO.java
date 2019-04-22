@@ -15,20 +15,19 @@ import model.bean.Produto;
 
 public class ProdutoDAO {
     
-    public void create(Produto p) {
-        
-        Connection con = ConnectionFactory.getConnection();
+        Connection con = Conection.ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
-
+    
+    public void create(Produto p) {
+       
         try {
             stmt = con.prepareStatement("INSERT INTO produto (nomeProduto,qtdProduto,"
-                    + "valorProduto, idlojaproprietaria, idfornecedorproprietarioa)VALUES(?,?,?,?,?)");
+                    + "valorProduto, idlojaproprietaria)VALUES(?,?,?,?)");
             stmt.setString(1, p.getNome());
             stmt.setInt(2, p.getQtd());
             stmt.setDouble(3, p.getValor());
-            stmt.setInt(4, p.getCodlojaproprietaria());
-            stmt.setInt(5, p.getCodfornecedorproprietario());
-
+            stmt.setInt(4, p.getCodlojaproprietaria().getId());
+           
             stmt.executeUpdate();
 
             JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
@@ -44,8 +43,6 @@ public class ProdutoDAO {
     
     public List<Produto> read() {
 
-        Connection con = Conection.ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
         ResultSet rs = null;
 
         List<Produto> produtos = new ArrayList<>();
@@ -56,16 +53,15 @@ public class ProdutoDAO {
 
             while (rs.next()) {
 
-                Produto produto2 = new Produto();
+                Produto p2 = new Produto();
 
-                produto2.setId(rs.getInt("idProduto"));
-                produto2.setNome(rs.getString("nomeProduto"));
-                produto2.setQtd(rs.getInt("qtdProduto"));
-                produto2.setValor(rs.getDouble("valorProduto"));
-                produto2.setCodlojaproprietaria(rs.getInt("idlojaproprietaria"));
-                produto2.setCodfornecedorproprietario(rs.getInt("idfornecedorproprietario"));
-                
-                produtos.add(produto2);
+                p2.setId(rs.getInt("idProduto"));
+                p2.setNome(rs.getString("nomeProduto"));
+                p2.setQtd(rs.getInt("qtdProduto"));
+                p2.setValor(rs.getDouble("valorProduto"));
+                //p2.setCodlojaproprietaria((Loja) rs.getObject("codLojaProprietaria"));
+                               
+                produtos.add(p2);
 
             }
 
@@ -73,6 +69,81 @@ public class ProdutoDAO {
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             Conection.ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+
+        return produtos;
+
+    }
+    
+    public void update(Produto p) {
+
+        try {
+            stmt = con.prepareStatement("UPDATE produto SET nomeProduto = ? ,qtdProduto = ?,"
+                    + "valorProduto = ? , idlojaproprietaria = ? WHERE idProduto = ?");
+
+            stmt.setString(1, p.getNome());
+            stmt.setInt(2, p.getQtd());
+            stmt.setDouble(3, p.getValor());
+            //stmt.setInt(4, p.getCodlojaproprietaria().getId());
+                       
+            stmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null, "Atualizado com sucesso!");
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao Atualizar!" + ex);
+        } finally {
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+    }
+    
+    public void delete(Produto p) {
+
+        try {
+            stmt = con.prepareStatement("DELETE FROM produto WHERE idProduto = ?");
+            stmt.setInt(1, p.getId());
+
+            stmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null, "Removido com Sucesso!");
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao Remover!" + ex);
+        } finally {
+            ConnectionFactory.closeConnection(con, stmt);
+        }
+    } 
+    
+    public List<Produto> buscar(String nome) {
+
+        ResultSet rs = null;
+
+        List<Produto> produtos = new ArrayList<>();
+
+        try {
+            stmt = con.prepareStatement("SELECT * FROM produto WHERE nomeProduto LIKE ?");
+            stmt.setString(1, "%"+nome+"%");
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+
+                Produto P = new Produto();
+
+                P.setId(rs.getInt("idProduto"));
+                P.setNome(rs.getString("nomeProduto"));
+                P.setQtd(rs.getInt("qtdProduto"));
+                P.setValor(rs.getDouble("valorProduto"));
+                //P.setCodlojaproprietaria((Loja)rs.getObject("codLojaProprietaria"));
+                
+
+                produtos.add(P);
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            ConnectionFactory.closeConnection(con, stmt, rs);
         }
 
         return produtos;

@@ -7,9 +7,19 @@ public class Produto {
     private String nome;
     private int qtd;
     private double valor;
-    private int codlojaproprietaria;
-    private int codfornecedorproprietario;
+    private Loja codlojaproprietaria;
+    
+    public Produto(){
+        
+    }
 
+    public Produto(String nome, int qtd, double valor, Loja codlojaproprietaria) {
+        this.nome = nome;
+        this.qtd = qtd;
+        this.valor = valor;
+        this.codlojaproprietaria = codlojaproprietaria;
+    }
+   
     public int getId() {
         return id;
     }
@@ -42,20 +52,14 @@ public class Produto {
         this.valor = valor;
     }
 
-    public int getCodlojaproprietaria() {
+    public Loja getCodlojaproprietaria() {
         return codlojaproprietaria;
     }
 
-    public void setCodlojaproprietaria(int codlojaproprietaria) {
+    public void setCodlojaproprietaria(Loja codlojaproprietaria) {
         this.codlojaproprietaria = codlojaproprietaria;
     }
-
-    public int getCodfornecedorproprietario() {
-        return codfornecedorproprietario;
-    }
-
-    public void setCodfornecedorproprietario(int codfornecedorproprietario) {
-        this.codfornecedorproprietario = codfornecedorproprietario;
-    }
     
+    
+
 }
