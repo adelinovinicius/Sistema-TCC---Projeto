@@ -128,6 +128,11 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
         );
 
         cbLoja.setForeground(new java.awt.Color(255, 167, 38));
+        cbLoja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbLojaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -299,6 +304,10 @@ public class CadastroDeProdutosInternalFrame extends javax.swing.JInternalFrame 
             cbLoja.setSelectedItem(produtoTable.getValueAt(produtoTable.getSelectedRow(), 4).toString());
         } 
     }//GEN-LAST:event_produtoTableKeyReleased
+
+    private void cbLojaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbLojaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbLojaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atualizarProdutoButton;

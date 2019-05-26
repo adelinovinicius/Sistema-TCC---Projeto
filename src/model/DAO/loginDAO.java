@@ -12,21 +12,22 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.bean.Login;
+import model.bean.TipoUsuario;
 
 public class loginDAO { 
+    Connection con = ConnectionFactory.getConnection();
+    PreparedStatement stmt = null;
+    ResultSet rs = null; 
     
 public void create(Login l) {
 
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-
         try {
             stmt = con.prepareStatement("INSERT INTO usuario (usuario, "
-                    + "senha,tipoUsuario)VALUES(?,?,?)");
+                    + "senhaUsuario,tipoUsuario)VALUES(?,?,?)");
 
             stmt.setString(1, l.getUsuario());
             stmt.setString(2, l.getSenha());
-            stmt.setString(3,l.getTipo());
+            stmt.setInt(3,l.getTipo().getId());
 
             stmt.executeUpdate();
 
@@ -40,17 +41,16 @@ public void create(Login l) {
     }
 
     public boolean checkLogin(String usuario, String senha){
-            
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;   
-        ResultSet rs = null; 
+  
         boolean check = false;
         
      try {
          
-            stmt = con.prepareStatement("SELECT * FROM usuario WHERE usuario = ? and senha = ?");
+            stmt = con.prepareStatement("SELECT * FROM usuario WHERE usuario = ? "
+                    + "and senha = ?");
             stmt.setString(1, usuario);
             stmt.setString(2, senha);
+            //stmt.setInt(3, tipoUsuario);
 
             rs = stmt.executeQuery();
          
@@ -72,10 +72,6 @@ public void create(Login l) {
     
     public List<Login> read() {
 
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-
         List<Login> Logins = new ArrayList<>();
 
         try {
@@ -89,7 +85,7 @@ public void create(Login l) {
                 login2.setId(rs.getInt("idUsuario"));
                 login2.setUsuario(rs.getString("usuario"));
                 login2.setSenha(rs.getString("senha"));
-                login2.setTipo(rs.getString("tipoUsuario"));
+                login2.setTipo((TipoUsuario) rs.getObject("tpoUsuario"));
                 
                 Logins.add(login2);
 
@@ -107,10 +103,6 @@ public void create(Login l) {
     
     public List<Login> buscar(String nome) {
 
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-
         List<Login> logins = new ArrayList<>();
 
         try {
@@ -125,7 +117,7 @@ public void create(Login l) {
                 login1.setId(rs.getInt("idUsuario"));
                 login1.setUsuario(rs.getString("usuario"));
                 login1.setSenha(rs.getString("senha"));
-                login1.setTipo(rs.getString("tipoUsuario"));
+                login1.setTipo((TipoUsuario) rs.getObject("tipoUsuario"));
                 
                 logins.add(login1);
 
@@ -143,9 +135,6 @@ public void create(Login l) {
     
     public void delete(Login l) {
 
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-
         try {
             stmt = con.prepareStatement("DELETE FROM usuario WHERE idUsuario = ?");
             stmt.setInt(1, l.getId());
@@ -160,4 +149,5 @@ public void create(Login l) {
             ConnectionFactory.closeConnection(con, stmt);
         }
     }
+
 }

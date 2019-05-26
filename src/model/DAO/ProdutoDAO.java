@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import model.bean.Loja;
 import model.bean.Produto;
 
 public class ProdutoDAO {
@@ -59,7 +60,7 @@ public class ProdutoDAO {
                 p2.setNome(rs.getString("nomeProduto"));
                 p2.setQtd(rs.getInt("qtdProduto"));
                 p2.setValor(rs.getDouble("valorProduto"));
-                //p2.setCodlojaproprietaria((Loja) rs.getObject("codLojaProprietaria"));
+                p2.setCodlojaproprietaria((Loja) rs.getObject("codLojaProprietaria"));
                                
                 produtos.add(p2);
 
@@ -84,7 +85,8 @@ public class ProdutoDAO {
             stmt.setString(1, p.getNome());
             stmt.setInt(2, p.getQtd());
             stmt.setDouble(3, p.getValor());
-            //stmt.setInt(4, p.getCodlojaproprietaria().getId());
+            stmt.setInt(4, p.getCodlojaproprietaria().getId());
+            stmt.setInt(5, p.getId());
                        
             stmt.executeUpdate();
 
@@ -133,7 +135,7 @@ public class ProdutoDAO {
                 P.setNome(rs.getString("nomeProduto"));
                 P.setQtd(rs.getInt("qtdProduto"));
                 P.setValor(rs.getDouble("valorProduto"));
-                //P.setCodlojaproprietaria((Loja)rs.getObject("codLojaProprietaria"));
+                P.setCodlojaproprietaria((Loja)rs.getObject("codLojaProprietaria"));
                 
 
                 produtos.add(P);

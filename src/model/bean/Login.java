@@ -6,15 +6,16 @@ public class Login {
     private int id;
     private String usuario;
     private String senha;
-    private String tipo;
+    private TipoUsuario tipo;
 
-    public String getTipo() {
+    public TipoUsuario getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(TipoUsuario tipo) {
         this.tipo = tipo;
     }
+
 
     public int getId() {
         return id;

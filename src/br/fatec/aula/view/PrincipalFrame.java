@@ -17,7 +17,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private CadastroEntregadorInternalFrame telaFornecedor = null;
     private BuscaClienteInternalFrame telaBuscaCliente = null;
     private BuscaLojaInternalFrame telaBuscaLoja = null;
-    private BuscaUsuarioInternalFrame telaBuscaUsuario = null;
     private BuscaEntregadorInternalFrame telaBuscaEntregador = null;
     private BuscaProdutoInternalFrame telaBuscaProduto = null;
 
@@ -35,18 +34,16 @@ public class PrincipalFrame extends javax.swing.JFrame {
         cadastroLojaMenuItem = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         buscarLojaMenuItem = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        cadastroEntregadorMenuItem = new javax.swing.JMenuItem();
-        jSeparator3 = new javax.swing.JPopupMenu.Separator();
-        BuscaEntregadorMenuItem = new javax.swing.JMenuItem();
         produtoMenu = new javax.swing.JMenu();
         cadastroProdutoMenuItem = new javax.swing.JMenuItem();
         jSeparator4 = new javax.swing.JPopupMenu.Separator();
         buscaProdutoMenuItem = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        cadastroEntregadorMenuItem = new javax.swing.JMenuItem();
+        jSeparator3 = new javax.swing.JPopupMenu.Separator();
+        BuscaEntregadorMenuItem = new javax.swing.JMenuItem();
         comprasMenu = new javax.swing.JMenu();
         cadastrocomprasMenuItem = new javax.swing.JMenuItem();
-        comprasMenu1 = new javax.swing.JMenu();
-        buscarUsuarioMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Compras");
@@ -130,32 +127,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
         funçoesMenuBar.add(LojaMenu);
 
-        jMenu1.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu1.setText("Entregador");
-
-        cadastroEntregadorMenuItem.setBackground(new java.awt.Color(255, 255, 255));
-        cadastroEntregadorMenuItem.setForeground(new java.awt.Color(255, 167, 38));
-        cadastroEntregadorMenuItem.setText("Entregador");
-        cadastroEntregadorMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastroEntregadorMenuItemActionPerformed(evt);
-            }
-        });
-        jMenu1.add(cadastroEntregadorMenuItem);
-        jMenu1.add(jSeparator3);
-
-        BuscaEntregadorMenuItem.setBackground(new java.awt.Color(255, 255, 255));
-        BuscaEntregadorMenuItem.setForeground(new java.awt.Color(255, 167, 38));
-        BuscaEntregadorMenuItem.setText("Busca  / Delete Entregador");
-        BuscaEntregadorMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscaEntregadorMenuItemActionPerformed(evt);
-            }
-        });
-        jMenu1.add(BuscaEntregadorMenuItem);
-
-        funçoesMenuBar.add(jMenu1);
-
         produtoMenu.setForeground(new java.awt.Color(255, 255, 255));
         produtoMenu.setText("Produto");
 
@@ -182,6 +153,32 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
         funçoesMenuBar.add(produtoMenu);
 
+        jMenu1.setForeground(new java.awt.Color(255, 255, 255));
+        jMenu1.setText("Entregador");
+
+        cadastroEntregadorMenuItem.setBackground(new java.awt.Color(255, 255, 255));
+        cadastroEntregadorMenuItem.setForeground(new java.awt.Color(255, 167, 38));
+        cadastroEntregadorMenuItem.setText("Entregador");
+        cadastroEntregadorMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastroEntregadorMenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(cadastroEntregadorMenuItem);
+        jMenu1.add(jSeparator3);
+
+        BuscaEntregadorMenuItem.setBackground(new java.awt.Color(255, 255, 255));
+        BuscaEntregadorMenuItem.setForeground(new java.awt.Color(255, 167, 38));
+        BuscaEntregadorMenuItem.setText("Busca  / Delete Entregador");
+        BuscaEntregadorMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscaEntregadorMenuItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(BuscaEntregadorMenuItem);
+
+        funçoesMenuBar.add(jMenu1);
+
         comprasMenu.setForeground(new java.awt.Color(255, 255, 255));
         comprasMenu.setText("Compras");
 
@@ -196,21 +193,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
         comprasMenu.add(cadastrocomprasMenuItem);
 
         funçoesMenuBar.add(comprasMenu);
-
-        comprasMenu1.setForeground(new java.awt.Color(255, 255, 255));
-        comprasMenu1.setText("Usuario");
-
-        buscarUsuarioMenuItem.setBackground(new java.awt.Color(255, 255, 255));
-        buscarUsuarioMenuItem.setForeground(new java.awt.Color(255, 167, 38));
-        buscarUsuarioMenuItem.setText("Busca / Delete Usuario");
-        buscarUsuarioMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarUsuarioMenuItemActionPerformed(evt);
-            }
-        });
-        comprasMenu1.add(buscarUsuarioMenuItem);
-
-        funçoesMenuBar.add(comprasMenu1);
 
         setJMenuBar(funçoesMenuBar);
 
@@ -291,15 +273,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
         principalPanel.add(telaBuscaLoja);
     }//GEN-LAST:event_buscarLojaMenuItemActionPerformed
 
-    private void buscarUsuarioMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarUsuarioMenuItemActionPerformed
-        if (telaBuscaUsuario != null && telaBuscaUsuario.isVisible()) {
-            return;
-        }
-        telaBuscaUsuario = new BuscaUsuarioInternalFrame();
-        telaBuscaUsuario.setVisible(true);
-        principalPanel.add(telaBuscaUsuario);
-    }//GEN-LAST:event_buscarUsuarioMenuItemActionPerformed
-
     private void BuscaEntregadorMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscaEntregadorMenuItemActionPerformed
         if (telaBuscaEntregador != null && telaBuscaEntregador.isVisible()) {
             return;
@@ -360,7 +333,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem buscaProdutoMenuItem;
     private javax.swing.JMenuItem buscaclienteMenuItem;
     private javax.swing.JMenuItem buscarLojaMenuItem;
-    private javax.swing.JMenuItem buscarUsuarioMenuItem;
     private javax.swing.JMenuItem cadastroEntregadorMenuItem;
     private javax.swing.JMenuItem cadastroLojaMenuItem;
     private javax.swing.JMenuItem cadastroProdutoMenuItem;
@@ -368,7 +340,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem cadastrocomprasMenuItem;
     private javax.swing.JMenu clienteMenu;
     private javax.swing.JMenu comprasMenu;
-    private javax.swing.JMenu comprasMenu1;
     private javax.swing.JMenuBar funçoesMenuBar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;

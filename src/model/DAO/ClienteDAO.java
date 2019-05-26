@@ -14,10 +14,11 @@ import model.bean.Cliente;
 
 public class ClienteDAO {
 
-    public void create(Cliente c) {
+    Connection con = ConnectionFactory.getConnection();
+    PreparedStatement stmt = null;
+    ResultSet rs = null;
 
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
+    public void create(Cliente c) {
 
         try {
             stmt = con.prepareStatement("INSERT INTO cliente (NomeCliente, "
@@ -49,10 +50,6 @@ public class ClienteDAO {
     }
 
     public List<Cliente> read() {
-
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
 
         List<Cliente> clientes = new ArrayList<>();
 
@@ -93,9 +90,6 @@ public class ClienteDAO {
 
     public void update(Cliente c) {
 
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-
         try {
             stmt = con.prepareStatement("UPDATE cliente SET NomeCliente = ?, "
                     + "Email = ?, CPFCliente = ?, TelefoneCliente = ?, SexoCliente = ?, "
@@ -128,9 +122,6 @@ public class ClienteDAO {
 
     public void delete(Cliente c) {
 
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-
         try {
             stmt = con.prepareStatement("DELETE FROM cliente WHERE idCliente = ?");
             stmt.setInt(1, c.getId());
@@ -148,15 +139,11 @@ public class ClienteDAO {
 
     public List<Cliente> buscar(String nome) {
 
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-
         List<Cliente> clientes = new ArrayList<>();
 
         try {
             stmt = con.prepareStatement("SELECT * FROM cliente WHERE NomeCLiente LIKE ?");
-            stmt.setString(1, "%"+nome+"%");
+            stmt.setString(1, "%" + nome + "%");
             rs = stmt.executeQuery();
 
             while (rs.next()) {

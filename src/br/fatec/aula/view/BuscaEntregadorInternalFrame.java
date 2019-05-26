@@ -11,36 +11,35 @@ public class BuscaEntregadorInternalFrame extends javax.swing.JInternalFrame {
 
     public BuscaEntregadorInternalFrame() {
         initComponents();
-        DefaultTableModel loja1 = (DefaultTableModel) entregadorTable2.getModel();
-        entregadorTable2.setRowSorter(new TableRowSorter(loja1));
+        DefaultTableModel entregadores1 = (DefaultTableModel) entregadorTable2.getModel();
+        entregadorTable2.setRowSorter(new TableRowSorter(entregadores1));
 
         readTable();
     }
     public void readTable() {
 
-        DefaultTableModel loja1 = (DefaultTableModel) entregadorTable2.getModel();
-        loja1.setNumRows(0);
+        DefaultTableModel entregadores1 = (DefaultTableModel) entregadorTable2.getModel();
+        entregadores1.setNumRows(0);
 
         EntregadorDAO pdao = new EntregadorDAO();
 
         for (Entregador e : pdao.read()) {
 
-            loja1.addRow(new Object[]{
+            entregadores1.addRow(new Object[]{
                 e.getId(),
                 e.getNome(),
                 e.getEmail(),
-                e.getTelefone(),
                 e.getCNH(),
-                e.getCidade(),
-                e.getUF(),
+                e.getTelefone(),
                 e.getCEP(),
-                e.getRua(),
                 e.getNumero(),
+                e.getRua(),
+                e.getBairro(),
+                e.getCidade(),
+                e.getUF()
                 
             });
-
         }
-
     }
     
     public void burcarpornome(String nome) {
@@ -122,7 +121,7 @@ public class BuscaEntregadorInternalFrame extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "Nome", "Email", "Telefone", "CNH", "Cidade", "Estado", "CEP", "Rua", "N°"
+                "ID", "Nome", "Email", "CNH", "Telefone", "CEP", "N°", "Rua", "Bairro", "Cidade", "Estado"
             }
         ));
         entregadorTable2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -136,19 +135,19 @@ public class BuscaEntregadorInternalFrame extends javax.swing.JInternalFrame {
         buscaPanel.setLayout(buscaPanelLayout);
         buscaPanelLayout.setHorizontalGroup(
             buscaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buscaPanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buscaPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(buscaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(buscaTextField)
                     .addGroup(buscaPanelLayout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 474, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(buscarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(deletarLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
-            .addComponent(produtosScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
+            .addComponent(produtosScrollPane)
         );
         buscaPanelLayout.setVerticalGroup(
             buscaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

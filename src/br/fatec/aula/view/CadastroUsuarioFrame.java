@@ -1,13 +1,25 @@
 package br.fatec.aula.view;
 
+import javax.swing.JOptionPane;
 import model.DAO.loginDAO;
+import model.DAO.tipoUsuarioDAO;
 import model.bean.Login;
+import model.bean.TipoUsuario;
 
 public class CadastroUsuarioFrame extends javax.swing.JFrame {
 
     public CadastroUsuarioFrame() {
         initComponents();
+        
         this.setLocationRelativeTo(null);
+        
+        tipoUsuarioDAO dao = new tipoUsuarioDAO();
+
+        for (TipoUsuario t : dao.read()) {
+
+            tipoComboBox.addItem(t);
+
+        }        
     }
 
     @SuppressWarnings("unchecked")
@@ -63,7 +75,6 @@ public class CadastroUsuarioFrame extends javax.swing.JFrame {
         senhaText.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 167, 38)));
 
         tipoComboBox.setForeground(new java.awt.Color(255, 167, 38));
-        tipoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente", "Loja" }));
         tipoComboBox.setBorder(null);
 
         jLabel4.setForeground(new java.awt.Color(255, 167, 38));
@@ -128,23 +139,26 @@ public class CadastroUsuarioFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastrarLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarLabelMouseClicked
-        
-        Login l = new Login();
-        loginDAO dao = new loginDAO();
-        
-        l.setUsuario(usuarioTextField.getText());
-        l.setSenha(senhaText.getText()); 
-        l.setTipo((String) tipoComboBox.getSelectedItem());
-        
-        dao.create(l);
-        
-        new LoginFrame().setVisible(true); 
-        dispose();
-        
+        if ((usuarioTextField.getText().isEmpty()) || (senhaText.getText().isEmpty())) {
+            JOptionPane.showMessageDialog(null, "Os campos não podem estar vazios");
+        } else {
+            Login l = new Login();
+            loginDAO dao = new loginDAO();
+
+            l.setUsuario(usuarioTextField.getText());
+            l.setSenha(senhaText.getText());
+            l.setTipo((TipoUsuario) tipoComboBox.getSelectedItem());
+            
+
+            dao.create(l);
+
+            new LoginFrame().setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_cadastrarLabelMouseClicked
 
     private void voltarLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voltarLabelMouseClicked
-        new LoginFrame().setVisible(true); 
+        new LoginFrame().setVisible(true);
         dispose();
     }//GEN-LAST:event_voltarLabelMouseClicked
 
@@ -164,7 +178,7 @@ public class CadastroUsuarioFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField senhaText;
-    private javax.swing.JComboBox<String> tipoComboBox;
+    private javax.swing.JComboBox<Object> tipoComboBox;
     private javax.swing.JTextField usuarioTextField;
     private javax.swing.JLabel voltarLabel;
     // End of variables declaration//GEN-END:variables
