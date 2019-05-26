@@ -153,27 +153,28 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_loginButtonKeyPressed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-       
+
         getRootPane().setDefaultButton(loginButton);
 
         loginDAO dao = new loginDAO();
-            
+        
             if (dao.checkLogin(usuarioTextField.getText(), new String(senhaPasswordField.getPassword()))) {
-                
+
                 JFrame frame = new PrincipalFrame();
                 frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 frame.setVisible(true);
-                this.dispose();}
-            else {
-            JOptionPane.showMessageDialog(null, "Usuário ou senha inválido,"
-                    + "Contate ao Administrador!");}
-            
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário ou senha inválido,"
+                        + "Contate ao Administrador!");
+            }
+
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void loginButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButton1ActionPerformed
-        
+
         System.exit(0);
-        
+
     }//GEN-LAST:event_loginButton1ActionPerformed
 
     private void loginButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginButton1KeyPressed

@@ -59,30 +59,35 @@ public class comprasInternalFrame extends javax.swing.JInternalFrame {
         setClosable(true);
         setTitle("Compras");
 
-        jPanel1.setBackground(new java.awt.Color(44, 62, 80));
+        jPanel1.setBackground(new java.awt.Color(255, 167, 38));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        produtoPanel.setBackground(new java.awt.Color(44, 62, 80));
+        produtoPanel.setBackground(new java.awt.Color(255, 255, 255));
         produtoPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        produtoPanel.setForeground(new java.awt.Color(255, 167, 38));
 
-        descricaoLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        descricaoLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        descricaoLabel1.setForeground(new java.awt.Color(255, 167, 38));
         descricaoLabel1.setText("Descrição");
 
-        descricaoTextField1.setBackground(new java.awt.Color(44, 62, 80));
+        descricaoTextField1.setBackground(new java.awt.Color(255, 167, 38));
         descricaoTextField1.setForeground(new java.awt.Color(255, 255, 255));
         descricaoTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        qtdeLabel.setForeground(new java.awt.Color(255, 255, 255));
+        qtdeLabel.setBackground(new java.awt.Color(255, 255, 255));
+        qtdeLabel.setForeground(new java.awt.Color(255, 167, 38));
         qtdeLabel.setText("Quantidade");
 
-        valorLabel.setForeground(new java.awt.Color(255, 255, 255));
+        valorLabel.setBackground(new java.awt.Color(255, 255, 255));
+        valorLabel.setForeground(new java.awt.Color(255, 167, 38));
         valorLabel.setText("Valor Unitário (R$)");
 
-        qtdeFormattedTextField.setBackground(new java.awt.Color(44, 62, 80));
+        qtdeFormattedTextField.setBackground(new java.awt.Color(255, 167, 38));
         qtdeFormattedTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         qtdeFormattedTextField.setForeground(new java.awt.Color(255, 255, 255));
         qtdeFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
-        valorFormattedTextField.setBackground(new java.awt.Color(44, 62, 80));
+        valorFormattedTextField.setBackground(new java.awt.Color(255, 167, 38));
         valorFormattedTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         valorFormattedTextField.setForeground(new java.awt.Color(255, 255, 255));
         valorFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
@@ -156,35 +161,44 @@ public class comprasInternalFrame extends javax.swing.JInternalFrame {
         });
         produtosScrollPane.setViewportView(produtosTable);
 
-        botoesPanel.setBackground(new java.awt.Color(44, 62, 80));
+        botoesPanel.setBackground(new java.awt.Color(255, 255, 255));
         botoesPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        botoesPanel.setForeground(new java.awt.Color(255, 255, 255));
 
-        adicionarButton.setBackground(new java.awt.Color(44, 62, 80));
+        adicionarButton.setBackground(new java.awt.Color(255, 167, 38));
+        adicionarButton.setForeground(new java.awt.Color(255, 255, 255));
         adicionarButton.setText("Adicionar");
+        adicionarButton.setBorder(null);
         adicionarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adicionarButtonActionPerformed(evt);
             }
         });
 
-        atualizarButton.setBackground(new java.awt.Color(44, 62, 80));
+        atualizarButton.setBackground(new java.awt.Color(255, 167, 38));
+        atualizarButton.setForeground(new java.awt.Color(255, 255, 255));
         atualizarButton.setText("Atualizar");
+        atualizarButton.setBorder(null);
         atualizarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 atualizarButtonActionPerformed(evt);
             }
         });
 
-        excluirButton.setBackground(new java.awt.Color(44, 62, 80));
+        excluirButton.setBackground(new java.awt.Color(255, 167, 38));
+        excluirButton.setForeground(new java.awt.Color(255, 255, 255));
         excluirButton.setText("Excluir");
+        excluirButton.setBorder(null);
         excluirButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 excluirButtonActionPerformed(evt);
             }
         });
 
-        limparButton.setBackground(new java.awt.Color(44, 62, 80));
+        limparButton.setBackground(new java.awt.Color(255, 167, 38));
+        limparButton.setForeground(new java.awt.Color(255, 255, 255));
         limparButton.setText("Limpar");
+        limparButton.setBorder(null);
         limparButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 limparButtonActionPerformed(evt);
@@ -208,26 +222,27 @@ public class comprasInternalFrame extends javax.swing.JInternalFrame {
             botoesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(botoesPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(adicionarButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(atualizarButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(excluirButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(limparButton)
+                .addComponent(adicionarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(atualizarButton, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(excluirButton, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(limparButton, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        resultadolPanel.setBackground(new java.awt.Color(44, 62, 80));
+        resultadolPanel.setBackground(new java.awt.Color(255, 255, 255));
         resultadolPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        resultadolPanel.setForeground(new java.awt.Color(255, 255, 255));
 
         totalLabel.setBackground(new java.awt.Color(44, 62, 80));
         totalLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        totalLabel.setForeground(new java.awt.Color(255, 255, 255));
+        totalLabel.setForeground(new java.awt.Color(255, 167, 38));
         totalLabel.setText("Total a pagar (R$)");
 
         totalFormattedTextField.setEditable(false);
-        totalFormattedTextField.setBackground(new java.awt.Color(44, 62, 80));
+        totalFormattedTextField.setBackground(new java.awt.Color(255, 167, 38));
         totalFormattedTextField.setForeground(new java.awt.Color(255, 255, 255));
         totalFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,##0.00"))));
         totalFormattedTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -280,12 +295,12 @@ public class comprasInternalFrame extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(produtoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(produtosScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botoesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(produtosScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(botoesPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(11, 11, 11)
                 .addComponent(resultadolPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGap(0, 15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -296,9 +311,7 @@ public class comprasInternalFrame extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
